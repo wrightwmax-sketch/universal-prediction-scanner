@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Universal AI Prediction Market Scanner</title>
+  <title>Universal AI Prediction Market Scanner & Pulse Check Study</title>
   <style>
     :root {
       --bg: #0f172a; --card: #1e293b; --card-sub: #0f172a; --text: #f8fafc;
       --muted: #94a3b8; --accent: #10b981; --accent-bg: rgba(16,185,129,0.15);
-      --border: #334155; --warn: #f59e0b;
+      --border: #334155; --warn: #f59e0b; --danger: #ef4444;
       --poly: #6366f1; --kalshi: #0ea5e9; --manifold: #a855f7;
     }
     body.light {
       --bg: #f1f5f9; --card: #ffffff; --card-sub: #f8fafc; --text: #0f172a;
       --muted: #475569; --accent: #059669; --accent-bg: rgba(5,150,105,0.12);
-      --border: #cbd5e1; --warn: #d97706;
+      --border: #cbd5e1; --warn: #d97706; --danger: #dc2626;
     }
     * { box-sizing: border-box; }
     body {
@@ -22,7 +22,7 @@
       background: var(--bg); color: var(--text); margin: 0; padding: 24px;
       line-height: 1.5; transition: background 0.2s, color 0.2s;
     }
-    .container { max-width: 1100px; margin: 0 auto; }
+    .container { max-width: 1140px; margin: 0 auto; }
     header {
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 12px; border-bottom: 1px solid var(--border);
@@ -33,7 +33,7 @@
       padding: 9px 15px; border-radius: 8px; cursor: pointer; font-weight: 600;
     }
     .btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
     .calc-panel {
       background: var(--card); border: 2px solid var(--accent); border-radius: 12px;
       padding: 20px; margin-bottom: 24px;
@@ -64,6 +64,13 @@
     .plat-Polymarket { background: var(--poly); }
     .plat-Kalshi { background: var(--kalshi); }
     .plat-Manifold { background: var(--manifold); }
+    .status-pill {
+      display: inline-block; padding: 3px 9px; border-radius: 6px;
+      font-size: 0.75rem; font-weight: 700; margin-left: 6px;
+    }
+    .status-QUALIFIED_HIGH_CONVICTION { background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent); }
+    .status-WATCHLIST_NEAR_MISS { background: rgba(245,158,11,0.15); color: var(--warn); border: 1px solid var(--warn); }
+    .status-REJECTED_TRAP_ALERT { background: rgba(239,68,68,0.15); color: var(--danger); border: 1px solid var(--danger); }
     .action-banner {
       background: var(--accent-bg); border: 1px solid var(--accent);
       padding: 14px 18px; border-radius: 8px; margin: 14px 0;
@@ -84,13 +91,21 @@
       text-decoration: none; font-weight: 700; padding: 10px 18px;
       border-radius: 8px; margin-top: 12px;
     }
+    .study-table-wrap {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px; margin-top: 32px; overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    tr:hover { background: var(--card-sub); }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div>
-        <h1 style="margin:0; font-size:1.6rem;">Universal Prediction Market AI Scanner</h1>
+        <h1 style="margin:0; font-size:1.6rem;">Universal Prediction Market AI Scanner & Pulse Check</h1>
         <div id="scan-meta" style="color:var(--muted); font-size:0.9rem;">Scanning Polymarket, Kalshi & Manifold...</div>
       </div>
       <button class="btn" onclick="document.body.classList.toggle('light')">Day / Night Mode</button>
@@ -99,7 +114,7 @@
     <section class="calc-panel">
       <h2 style="margin:0 0 6px 0; font-size:1.2rem;">Step 1: Enter Your Total Account Budget ($)</h2>
       <p style="margin:0; color:var(--muted); font-size:0.9rem;">
-        Uses the <strong>20% Rule</strong> (never put more than 20% of your total budget on one bet). Every card across Polymarket, Kalshi, and Manifold updates automatically below.
+        Uses the <strong>20% Rule</strong> (never put more than 20% of your total budget on one bet). Every card and conversion table row across Polymarket, Kalshi, and Manifold updates automatically below.
       </p>
       <div class="calc-grid">
         <div>
@@ -122,14 +137,43 @@
       <button class="btn" onclick="setFilter('Polymarket', this)">Polymarket</button>
       <button class="btn" onclick="setFilter('Kalshi', this)">Kalshi (US Regulated)</button>
       <button class="btn" onclick="setFilter('Manifold', this)">Manifold</button>
+      <span style="margin-left:auto; display:flex; gap:8px;">
+        <button class="btn active" id="mode-qualified" onclick="setMode('QUALIFIED')">High-Conviction Picks Only (9)</button>
+        <button class="btn" id="mode-all" onclick="setMode('ALL_STUDIED')">All Studied Markets & Watchlist (20)</button>
+      </span>
     </div>
 
     <div id="signals-list"></div>
+
+    <section class="study-table-wrap">
+      <h2 style="margin:0 0 6px 0; font-size:1.25rem;">Complete Pulse Check Database — All 20 Studied Opportunities & Likelihood to Convert</h2>
+      <p style="margin:0 0 14px 0; color:var(--muted); font-size:0.88rem;">
+        Full cross-platform audit storing executable order-book ask price, AI calibrated <strong>Likelihood to Convert (%)</strong>, net edge, expected ROI, and qualification status.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Platform</th>
+            <th>Contract / Question</th>
+            <th>Side</th>
+            <th>Ask Price</th>
+            <th>Likelihood to Convert</th>
+            <th>Net Edge</th>
+            <th>Expected ROI</th>
+            <th>20% Rule Profit</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="study-table-body"></tbody>
+      </table>
+    </section>
   </div>
 
   <script>
     let cachedData = null;
     let activePlatform = 'ALL';
+    let activeMode = 'QUALIFIED';
 
     async function init() {
       try {
@@ -143,9 +187,23 @@
 
     function setFilter(plat, btnEl) {
       activePlatform = plat;
-      document.querySelectorAll('.tabs .btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tabs > .btn').forEach(b => b.classList.remove('active'));
       btnEl.classList.add('active');
       renderSignals();
+    }
+
+    function setMode(mode) {
+      activeMode = mode;
+      document.getElementById('mode-qualified').classList.toggle('active', mode === 'QUALIFIED');
+      document.getElementById('mode-all').classList.toggle('active', mode === 'ALL_STUDIED');
+      renderSignals();
+    }
+
+    function formatStatusLabel(status) {
+      if (status === 'QUALIFIED_HIGH_CONVICTION') return 'QUALIFIED HIGH-EDGE';
+      if (status === 'WATCHLIST_NEAR_MISS') return 'WATCHLIST / NEAR-MISS';
+      if (status === 'REJECTED_TRAP_ALERT') return 'TRAP ALERT (AVOID)';
+      return 'QUALIFIED HIGH-EDGE';
     }
 
     function renderSignals() {
@@ -157,61 +215,100 @@
       document.getElementById('safe-bet-display').textContent = '$' + safeBet.toFixed(2);
       document.getElementById('reserve-display').textContent = '$' + reserve.toFixed(2);
       document.getElementById('scan-meta').textContent =
-        `Last Scan: ${cachedData.last_updated_utc} | Exchanges: ${(cachedData.platforms_scanned || []).join(', ')} | Verified High-Edge Picks: ${cachedData.high_conviction_count}`;
+        `Last Pulse Check: ${cachedData.last_updated_utc} | Exchanges: ${(cachedData.platforms_scanned || []).join(', ')} | Total Studied: ${cachedData.total_markets_scanned} | Verified High-Edge Picks: ${cachedData.high_conviction_count}`;
 
-      const filtered = (cachedData.signals || []).filter(s => activePlatform === 'ALL' || s.platform === activePlatform);
+      const sourceList = activeMode === 'ALL_STUDIED'
+        ? (cachedData.all_studied_opportunities || cachedData.signals || [])
+        : (cachedData.signals || []);
+
+      const filtered = sourceList.filter(s => activePlatform === 'ALL' || s.platform === activePlatform);
       const list = document.getElementById('signals-list');
 
       if (filtered.length === 0) {
         list.innerHTML = `<div class="signal-card">No markets on this platform currently pass our strict 82% win chance + 8¢ edge filter. Keep your money in reserve.</div>`;
-        return;
+      } else {
+        list.innerHTML = filtered.map((s, idx) => {
+          const priceCents = (s.executable_ask_price * 100).toFixed(1).replace(/\.0$/, '');
+          const convPct = (s.likelihood_to_convert_pct !== undefined ? s.likelihood_to_convert_pct : (s.llm_true_probability * 100)).toFixed(1);
+          const shares = safeBet / s.executable_ask_price;
+          const totalPayout = shares * 1.0;
+          const pureProfit = totalPayout - safeBet;
+          const statusKey = s.status || 'QUALIFIED_HIGH_CONVICTION';
+          const edgeSign = s.net_edge_cents >= 0 ? '+' : '';
+          const roiSign = s.expected_roi_pct >= 0 ? '+' : '';
+
+          return `
+            <div class="signal-card">
+              <div>
+                <span class="platform-pill plat-${s.platform}">${s.platform}</span>
+                <span class="status-pill status-${statusKey}">${formatStatusLabel(statusKey)}</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+                <h2 style="margin:0; font-size:1.25rem;">Pick #${idx + 1}: ${s.question}</h2>
+                <span class="badge">BUY ${s.recommended_side} (Limit @ ${priceCents}¢)</span>
+              </div>
+
+              <div class="action-banner">
+                <div>
+                  <strong>Exact Move on ${s.platform}:</strong> Bet <strong>$${safeBet.toFixed(2)}</strong> on <strong>${s.recommended_side}</strong> using a <strong>Limit Order at ${priceCents}¢ ($${s.executable_ask_price})</strong>.
+                </div>
+                <div>
+                  <strong>Pure Profit if Converted (${convPct}% Chance):</strong> <span style="color:var(--accent); font-weight:800; font-size:1.15rem;">+$${pureProfit.toFixed(2)}</span> (Total Payout: $${totalPayout.toFixed(2)})
+                </div>
+              </div>
+
+              <p><strong>Simple Breakdown (Why This Converts):</strong> ${s.plain_english_summary}</p>
+              <p><strong>Fine Print / Rule Check:</strong> ${s.resolution_rule_traps}</p>
+
+              <div class="metrics">
+                <div class="stat-box"><span>Likelihood to Convert</span><strong>${convPct}%</strong></div>
+                <div class="stat-box"><span>Market Ask Price</span><strong>${priceCents}¢</strong></div>
+                <div class="stat-box"><span>Your Edge</span><strong>${edgeSign}${s.net_edge_cents}¢ / share</strong></div>
+                <div class="stat-box"><span>Return on Money</span><strong>${roiSign}${s.expected_roi_pct}%</strong></div>
+                <div class="stat-box"><span>Contracts You Get</span><strong>${shares.toFixed(1)}</strong></div>
+                <div class="stat-box"><span>Evidence Confidence</span><strong>${(s.confidence_score * 100).toFixed(0)}%</strong></div>
+              </div>
+
+              <details>
+                <summary>Click to View All Possible Scenarios & Historical Proof</summary>
+                <ul style="margin-top:10px;">
+                  ${(s.scenario_tree || []).map(b => `<li><strong>${b.scenario_name}</strong> (${(b.probability * 100).toFixed(0)}% chance) → <em>${b.impact_on_resolution}</em></li>`).join('')}
+                </ul>
+                <p><strong>Historical Proof:</strong> ${(s.historical_precedents || []).join(' | ')}</p>
+              </details>
+
+              <a class="market-btn" href="${s.url}" target="_blank" rel="noopener">Open Market on ${s.platform} →</a>
+            </div>
+          `;
+        }).join('');
       }
 
-      list.innerHTML = filtered.map((s, idx) => {
-        const priceCents = (s.executable_ask_price * 100).toFixed(0);
+      // Render complete 20-market study table
+      const allStudied = (cachedData.all_studied_opportunities || cachedData.signals || []).filter(
+        s => activePlatform === 'ALL' || s.platform === activePlatform
+      );
+      const tbody = document.getElementById('study-table-body');
+      tbody.innerHTML = allStudied.map((s, idx) => {
+        const priceCents = (s.executable_ask_price * 100).toFixed(1).replace(/\.0$/, '');
+        const convPct = (s.likelihood_to_convert_pct !== undefined ? s.likelihood_to_convert_pct : (s.llm_true_probability * 100)).toFixed(1);
         const shares = safeBet / s.executable_ask_price;
-        const totalPayout = shares * 1.0;
-        const pureProfit = totalPayout - safeBet;
-
+        const pureProfit = shares - safeBet;
+        const statusKey = s.status || 'QUALIFIED_HIGH_CONVICTION';
+        const edgeSign = s.net_edge_cents >= 0 ? '+' : '';
+        const roiSign = s.expected_roi_pct >= 0 ? '+' : '';
         return `
-          <div class="signal-card">
-            <span class="platform-pill plat-${s.platform}">${s.platform}</span>
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
-              <h2 style="margin:0; font-size:1.25rem;">Pick #${idx + 1}: ${s.question}</h2>
-              <span class="badge">BUY ${s.recommended_side} (Limit @ ${priceCents}¢)</span>
-            </div>
-
-            <div class="action-banner">
-              <div>
-                <strong>Exact Move on ${s.platform}:</strong> Bet <strong>$${safeBet.toFixed(2)}</strong> on <strong>${s.recommended_side}</strong> using a <strong>Limit Order at ${priceCents}¢ ($${s.executable_ask_price})</strong>.
-              </div>
-              <div>
-                <strong>Pure Profit if Correct:</strong> <span style="color:var(--accent); font-weight:800; font-size:1.15rem;">+$${pureProfit.toFixed(2)}</span> (Total Payout: $${totalPayout.toFixed(2)})
-              </div>
-            </div>
-
-            <p><strong>Simple Breakdown (Why This Wins):</strong> ${s.plain_english_summary}</p>
-            <p><strong>Fine Print / Rule Check:</strong> ${s.resolution_rule_traps}</p>
-
-            <div class="metrics">
-              <div class="stat-box"><span>AI True Win Chance</span><strong>${(s.llm_true_probability * 100).toFixed(1)}%</strong></div>
-              <div class="stat-box"><span>Market Ask Price</span><strong>${priceCents}¢</strong></div>
-              <div class="stat-box"><span>Your Edge</span><strong>+${s.net_edge_cents}¢ / share</strong></div>
-              <div class="stat-box"><span>Return on Money</span><strong>+${s.expected_roi_pct}%</strong></div>
-              <div class="stat-box"><span>Contracts You Get</span><strong>${shares.toFixed(1)}</strong></div>
-              <div class="stat-box"><span>Evidence Confidence</span><strong>${(s.confidence_score * 100).toFixed(0)}%</strong></div>
-            </div>
-
-            <details>
-              <summary>Click to View All Possible Scenarios & Historical Proof</summary>
-              <ul style="margin-top:10px;">
-                ${(s.scenario_tree || []).map(b => `<li><strong>${b.scenario_name}</strong> (${(b.probability * 100).toFixed(0)}% chance) → <em>${b.impact_on_resolution}</em></li>`).join('')}
-              </ul>
-              <p><strong>Historical Proof:</strong> ${(s.historical_precedents || []).join(' | ')}</p>
-            </details>
-
-            <a class="market-btn" href="${s.url}" target="_blank" rel="noopener">Open Market on ${s.platform} →</a>
-          </div>
+          <tr>
+            <td>${idx + 1}</td>
+            <td><span class="platform-pill plat-${s.platform}" style="margin:0;">${s.platform}</span></td>
+            <td><a href="${s.url}" target="_blank" rel="noopener" style="color:var(--text); font-weight:600;">${s.question}</a></td>
+            <td><strong>${s.recommended_side}</strong></td>
+            <td>${priceCents}¢</td>
+            <td><strong style="color:var(--accent);">${convPct}%</strong></td>
+            <td>${edgeSign}${s.net_edge_cents}¢</td>
+            <td>${roiSign}${s.expected_roi_pct}%</td>
+            <td>+$${pureProfit.toFixed(2)}</td>
+            <td><span class="status-pill status-${statusKey}" style="margin:0;">${formatStatusLabel(statusKey)}</span></td>
+          </tr>
         `;
       }).join('');
     }

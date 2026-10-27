@@ -10,7 +10,7 @@ from google.genai import types
 # API Base URLs
 POLY_GAMMA_URL = "https://gamma-api.polymarket.com"
 POLY_CLOB_URL = "https://clob.polymarket.com"
-KALSHI_API_URL = "https://external-api.kalshi.com/trade-api/v2"
+KALSHI_API_URL = "https://api.elections.kalshi.com/trade-api/v2"
 MANIFOLD_API_URL = "https://api.manifold.markets/v0"
 METACULUS_API_URL = "https://www.metaculus.com/api2"
 
@@ -66,10 +66,10 @@ def get_poly_best_ask(token_id: str) -> float | None:
 def fetch_polymarket_candidates(limit: int = 8) -> list[dict]:
     out = []
     try:
-        r = requests.get(f"{POLY_GAMMA_URL}/markets", params={"active": "true", "closed": "false", "limit": 60, "order": "volumeNum", "ascending": "false"}, timeout=15)
+        r = requests.get(f"{POLY_GAMMA_URL}/markets", params={"active": "true", "closed": "false", "limit": 100, "order": "volumeNum", "ascending": "false"}, timeout=15)
         for m in r.json():
             vol = float(m.get("volumeNum", 0) or 0)
-            if not (20000 <= vol <= 2500000):
+            if vol < 20000:
                 continue
             clob_raw = m.get("clobTokenIds")
             outcomes_raw = m.get("outcomes")
@@ -83,6 +83,10 @@ def fetch_polymarket_candidates(limit: int = 8) -> list[dict]:
             no_ask = get_poly_best_ask(token_ids[1])
             if yes_ask is None or no_ask is None:
                 continue
+            if (yes_ask <= 0.03 or yes_ask >= 0.96) and (no_ask <= 0.03 or no_ask >= 0.96):
+                continue
+            events = m.get("events") or []
+            slug = events[0].get("slug") if events and isinstance(events, list) and events[0].get("slug") else m.get("slug", "")
             out.append({
                 "platform": "Polymarket",
                 "question": m.get("question"),
@@ -90,7 +94,7 @@ def fetch_polymarket_candidates(limit: int = 8) -> list[dict]:
                 "resolution_source": m.get("resolutionSource", "UMA Optimistic Oracle"),
                 "end_date": m.get("endDate"),
                 "volume_usd": vol,
-                "url": f"https://polymarket.com/event/{m.get('slug', '')}",
+                "url": f"https://polymarket.com/event/{slug}",
                 "yes_ask": yes_ask,
                 "no_ask": no_ask
             })
@@ -103,32 +107,40 @@ def fetch_polymarket_candidates(limit: int = 8) -> list[dict]:
 def fetch_kalshi_candidates(limit: int = 6) -> list[dict]:
     out = []
     try:
-        r = requests.get(f"{KALSHI_API_URL}/markets", params={"status": "open", "limit": 60}, timeout=15)
-        for m in r.json().get("markets", []):
-            vol = float(m.get("volume", 0) or 0)
-            if vol < 500:
-                continue
-            yes_ask_cents = m.get("yes_ask")
-            no_ask_cents = m.get("no_ask")
-            if not yes_ask_cents or not no_ask_cents:
-                continue
-            yes_ask = float(yes_ask_cents) / 100.0
-            no_ask = float(no_ask_cents) / 100.0
-            if not (0.03 < yes_ask < 0.96 and 0.03 < no_ask < 0.96):
-                continue
-            ticker = m.get("ticker", "")
-            series = m.get("series_ticker", ticker).lower()
-            out.append({
-                "platform": "Kalshi",
-                "question": m.get("title") or m.get("subtitle") or ticker,
-                "description": f"{m.get('rules_primary', '')} {m.get('rules_secondary', '')}".strip(),
-                "resolution_source": "CFTC Regulated Kalshi Contract Spec",
-                "end_date": m.get("close_time") or m.get("expiration_time"),
-                "volume_usd": vol,
-                "url": f"https://kalshi.com/markets/{series}",
-                "yes_ask": yes_ask,
-                "no_ask": no_ask
-            })
+        r = requests.get(f"{KALSHI_API_URL}/events", params={"status": "open", "with_nested_markets": "true", "limit": 100}, timeout=15)
+        for ev in r.json().get("events", []):
+            series = (ev.get("series_ticker") or ev.get("event_ticker") or "").lower()
+            ev_title = ev.get("title") or ""
+            for m in ev.get("markets", []):
+                if m.get("mve_collection_ticker"):
+                    continue
+                vol = float(m.get("volume_fp") or m.get("volume") or 0)
+                if vol < 500:
+                    continue
+                ya_d = m.get("yes_ask_dollars")
+                na_d = m.get("no_ask_dollars")
+                ya_c = m.get("yes_ask")
+                na_c = m.get("no_ask")
+                yes_ask = float(ya_d) if ya_d is not None else (float(ya_c) / 100.0 if ya_c is not None else 0.0)
+                no_ask = float(na_d) if na_d is not None else (float(na_c) / 100.0 if na_c is not None else 0.0)
+                if not (0.03 < yes_ask < 0.96 and 0.03 < no_ask < 0.96):
+                    continue
+                ticker = m.get("ticker", "")
+                sub = m.get("yes_sub_title") or m.get("subtitle") or ""
+                question = f"{ev_title} ({sub})" if sub and sub.lower() not in ev_title.lower() else (m.get("title") or ev_title or ticker)
+                out.append({
+                    "platform": "Kalshi",
+                    "question": question,
+                    "description": f"{m.get('rules_primary', '')} {m.get('rules_secondary', '')}".strip(),
+                    "resolution_source": "CFTC Regulated Kalshi Contract Spec",
+                    "end_date": m.get("close_time") or m.get("expiration_time"),
+                    "volume_usd": vol,
+                    "url": f"https://kalshi.com/markets/{series}",
+                    "yes_ask": yes_ask,
+                    "no_ask": no_ask
+                })
+                if len(out) >= limit:
+                    break
             if len(out) >= limit:
                 break
     except Exception as e:
@@ -220,50 +232,66 @@ def main():
     )[:MAX_TOTAL_CANDIDATES]
 
     signals = []
+    all_studied = []
     for m in candidates:
         eval_res = evaluate_market_blind(client, m, historical_context)
-        if not eval_res or eval_res.confidence_score < MIN_CONFIDENCE_SCORE:
+        if not eval_res:
             continue
 
-        for side, prob, ask in [
-            ("YES", eval_res.true_yes_probability, m["yes_ask"]),
-            ("NO", eval_res.true_no_probability, m["no_ask"])
-        ]:
-            if ask <= 0.03 or ask >= 0.96:
-                continue
-            edge = prob - ask
-            if prob >= MIN_WIN_PROBABILITY and edge >= MIN_NET_EDGE:
-                roi_pct = (edge / ask) * 100.0
-                q_kelly = 0.25 * max(0.0, (prob - ask) / (1.0 - ask)) * 100.0
-                signals.append({
-                    "platform": m["platform"],
-                    "question": m["question"],
-                    "url": m["url"],
-                    "recommended_side": side,
-                    "executable_ask_price": round(ask, 3),
-                    "llm_true_probability": round(prob, 3),
-                    "net_edge_cents": round(edge * 100, 1),
-                    "expected_roi_pct": round(roi_pct, 1),
-                    "quarter_kelly_bankroll_pct": round(q_kelly, 1),
-                    "confidence_score": round(eval_res.confidence_score, 2),
-                    "volume_usd": round(m["volume_usd"], 0),
-                    "end_date": m["end_date"],
-                    "plain_english_summary": eval_res.plain_english_summary,
-                    "resolution_rule_traps": eval_res.resolution_rule_traps,
-                    "historical_precedents": eval_res.historical_precedents,
-                    "scenario_tree": [s.model_dump() for s in eval_res.scenario_tree]
-                })
+        # Record best side for full pulse-check study storage
+        best_side = "YES" if (eval_res.true_yes_probability - m["yes_ask"]) >= (eval_res.true_no_probability - m["no_ask"]) else "NO"
+        best_prob = eval_res.true_yes_probability if best_side == "YES" else eval_res.true_no_probability
+        best_ask = m["yes_ask"] if best_side == "YES" else m["no_ask"]
+        best_edge = best_prob - best_ask
+        best_roi = (best_edge / best_ask) * 100.0 if best_ask > 0 else 0.0
+        best_kelly = 0.25 * max(0.0, (best_prob - best_ask) / (1.0 - best_ask)) * 100.0 if best_ask < 1.0 else 0.0
+
+        qualified = (
+            eval_res.confidence_score >= MIN_CONFIDENCE_SCORE
+            and 0.03 < best_ask < 0.96
+            and best_prob >= MIN_WIN_PROBABILITY
+            and best_edge >= MIN_NET_EDGE
+        )
+
+        entry = {
+            "platform": m["platform"],
+            "question": m["question"],
+            "url": m["url"],
+            "recommended_side": best_side,
+            "executable_ask_price": round(best_ask, 3),
+            "llm_true_probability": round(best_prob, 3),
+            "likelihood_to_convert_pct": round(best_prob * 100, 1),
+            "net_edge_cents": round(best_edge * 100, 1),
+            "expected_roi_pct": round(best_roi, 1),
+            "quarter_kelly_bankroll_pct": round(best_kelly, 1),
+            "confidence_score": round(eval_res.confidence_score, 2),
+            "volume_usd": round(m["volume_usd"], 0),
+            "end_date": m["end_date"],
+            "status": "QUALIFIED_HIGH_CONVICTION" if qualified else ("WATCHLIST_NEAR_MISS" if best_edge > 0 else "REJECTED_NEGATIVE_EDGE"),
+            "plain_english_summary": eval_res.plain_english_summary,
+            "resolution_rule_traps": eval_res.resolution_rule_traps,
+            "historical_precedents": eval_res.historical_precedents,
+            "scenario_tree": [s.model_dump() for s in eval_res.scenario_tree]
+        }
+        all_studied.append(entry)
+        if qualified:
+            signals.append(entry)
         time.sleep(2)
 
     signals.sort(key=lambda x: x["expected_roi_pct"], reverse=True)
+    all_studied.sort(key=lambda x: x["expected_roi_pct"], reverse=True)
+    now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     payload = {
-        "last_updated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+        "last_updated_utc": now_str,
         "platforms_scanned": ["Polymarket", "Kalshi", "Manifold"],
-        "total_markets_scanned": len(candidates),
+        "total_markets_scanned": len(all_studied),
         "high_conviction_count": len(signals),
-        "signals": signals
+        "signals": signals,
+        "all_studied_opportunities": all_studied
     }
     with open("signals.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2)
+    with open("pulse_check_study.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
 if __name__ == "__main__":
