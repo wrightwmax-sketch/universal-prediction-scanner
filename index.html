@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal AI Prediction Market Scanner</title>
+  <style>
+    :root {
+      --bg: #0f172a; --card: #1e293b; --card-sub: #0f172a; --text: #f8fafc;
+      --muted: #94a3b8; --accent: #10b981; --accent-bg: rgba(16,185,129,0.15);
+      --border: #334155; --warn: #f59e0b;
+      --poly: #6366f1; --kalshi: #0ea5e9; --manifold: #a855f7;
+    }
+    body.light {
+      --bg: #f1f5f9; --card: #ffffff; --card-sub: #f8fafc; --text: #0f172a;
+      --muted: #475569; --accent: #059669; --accent-bg: rgba(5,150,105,0.12);
+      --border: #cbd5e1; --warn: #d97706;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+      line-height: 1.5; transition: background 0.2s, color 0.2s;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px; border-bottom: 1px solid var(--border);
+      padding-bottom: 16px; margin-bottom: 22px;
+    }
+    .btn {
+      background: var(--card); color: var(--text); border: 1px solid var(--border);
+      padding: 9px 15px; border-radius: 8px; cursor: pointer; font-weight: 600;
+    }
+    .btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .calc-panel {
+      background: var(--card); border: 2px solid var(--accent); border-radius: 12px;
+      padding: 20px; margin-bottom: 24px;
+    }
+    .calc-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 14px;
+    }
+    .stat-box {
+      background: var(--card-sub); border: 1px solid var(--border);
+      padding: 14px; border-radius: 8px;
+    }
+    .stat-box span { display: block; font-size: 0.8rem; color: var(--muted); }
+    .stat-box strong { font-size: 1.35rem; color: var(--accent); }
+    input[type="number"] {
+      width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--card-sub); color: var(--text); font-size: 1.1rem; font-weight: 700;
+    }
+    .signal-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px; margin-bottom: 22px;
+    }
+    .platform-pill {
+      display: inline-block; padding: 3px 10px; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 800; color: #fff; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .plat-Polymarket { background: var(--poly); }
+    .plat-Kalshi { background: var(--kalshi); }
+    .plat-Manifold { background: var(--manifold); }
+    .action-banner {
+      background: var(--accent-bg); border: 1px solid var(--accent);
+      padding: 14px 18px; border-radius: 8px; margin: 14px 0;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+    }
+    .badge {
+      background: var(--accent); color: #ffffff; padding: 6px 14px;
+      border-radius: 6px; font-weight: 800; font-size: 1rem;
+    }
+    .metrics {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 12px; margin: 16px 0;
+    }
+    details { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+    summary { cursor: pointer; font-weight: 700; color: var(--warn); }
+    a.market-btn {
+      display: inline-block; background: var(--accent); color: #fff;
+      text-decoration: none; font-weight: 700; padding: 10px 18px;
+      border-radius: 8px; margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1 style="margin:0; font-size:1.6rem;">Universal Prediction Market AI Scanner</h1>
+        <div id="scan-meta" style="color:var(--muted); font-size:0.9rem;">Scanning Polymarket, Kalshi & Manifold...</div>
+      </div>
+      <button class="btn" onclick="document.body.classList.toggle('light')">Day / Night Mode</button>
+    </header>
+
+    <section class="calc-panel">
+      <h2 style="margin:0 0 6px 0; font-size:1.2rem;">Step 1: Enter Your Total Account Budget ($)</h2>
+      <p style="margin:0; color:var(--muted); font-size:0.9rem;">
+        Uses the <strong>20% Rule</strong> (never put more than 20% of your total budget on one bet). Every card across Polymarket, Kalshi, and Manifold updates automatically below.
+      </p>
+      <div class="calc-grid">
+        <div>
+          <label style="font-size:0.85rem; color:var(--muted); display:block; margin-bottom:6px;">Your Total Budget ($)</label>
+          <input type="number" id="budget-input" value="500" min="10" step="10" oninput="renderSignals()" />
+        </div>
+        <div class="stat-box">
+          <span>Safe Bet Per Pick (20% Rule)</span>
+          <strong id="safe-bet-display">$100.00</strong>
+        </div>
+        <div class="stat-box">
+          <span>Cash Kept Safely in Reserve</span>
+          <strong id="reserve-display">$400.00</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="tabs">
+      <button class="btn active" onclick="setFilter('ALL', this)">All Platforms</button>
+      <button class="btn" onclick="setFilter('Polymarket', this)">Polymarket</button>
+      <button class="btn" onclick="setFilter('Kalshi', this)">Kalshi (US Regulated)</button>
+      <button class="btn" onclick="setFilter('Manifold', this)">Manifold</button>
+    </div>
+
+    <div id="signals-list"></div>
+  </div>
+
+  <script>
+    let cachedData = null;
+    let activePlatform = 'ALL';
+
+    async function init() {
+      try {
+        const res = await fetch('./signals.json?t=' + Date.now());
+        cachedData = await res.json();
+        renderSignals();
+      } catch (err) {
+        document.getElementById('scan-meta').textContent = 'Error loading signals.json';
+      }
+    }
+
+    function setFilter(plat, btnEl) {
+      activePlatform = plat;
+      document.querySelectorAll('.tabs .btn').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+      renderSignals();
+    }
+
+    function renderSignals() {
+      if (!cachedData) return;
+      const budget = Math.max(10, parseFloat(document.getElementById('budget-input').value) || 0);
+      const safeBet = budget * 0.20;
+      const reserve = budget - safeBet;
+
+      document.getElementById('safe-bet-display').textContent = '$' + safeBet.toFixed(2);
+      document.getElementById('reserve-display').textContent = '$' + reserve.toFixed(2);
+      document.getElementById('scan-meta').textContent =
+        `Last Scan: ${cachedData.last_updated_utc} | Exchanges: ${(cachedData.platforms_scanned || []).join(', ')} | Verified High-Edge Picks: ${cachedData.high_conviction_count}`;
+
+      const filtered = (cachedData.signals || []).filter(s => activePlatform === 'ALL' || s.platform === activePlatform);
+      const list = document.getElementById('signals-list');
+
+      if (filtered.length === 0) {
+        list.innerHTML = `<div class="signal-card">No markets on this platform currently pass our strict 82% win chance + 8¢ edge filter. Keep your money in reserve.</div>`;
+        return;
+      }
+
+      list.innerHTML = filtered.map((s, idx) => {
+        const priceCents = (s.executable_ask_price * 100).toFixed(0);
+        const shares = safeBet / s.executable_ask_price;
+        const totalPayout = shares * 1.0;
+        const pureProfit = totalPayout - safeBet;
+
+        return `
+          <div class="signal-card">
+            <span class="platform-pill plat-${s.platform}">${s.platform}</span>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;">
+              <h2 style="margin:0; font-size:1.25rem;">Pick #${idx + 1}: ${s.question}</h2>
+              <span class="badge">BUY ${s.recommended_side} (Limit @ ${priceCents}¢)</span>
+            </div>
+
+            <div class="action-banner">
+              <div>
+                <strong>Exact Move on ${s.platform}:</strong> Bet <strong>$${safeBet.toFixed(2)}</strong> on <strong>${s.recommended_side}</strong> using a <strong>Limit Order at ${priceCents}¢ ($${s.executable_ask_price})</strong>.
+              </div>
+              <div>
+                <strong>Pure Profit if Correct:</strong> <span style="color:var(--accent); font-weight:800; font-size:1.15rem;">+$${pureProfit.toFixed(2)}</span> (Total Payout: $${totalPayout.toFixed(2)})
+              </div>
+            </div>
+
+            <p><strong>Simple Breakdown (Why This Wins):</strong> ${s.plain_english_summary}</p>
+            <p><strong>Fine Print / Rule Check:</strong> ${s.resolution_rule_traps}</p>
+
+            <div class="metrics">
+              <div class="stat-box"><span>AI True Win Chance</span><strong>${(s.llm_true_probability * 100).toFixed(1)}%</strong></div>
+              <div class="stat-box"><span>Market Ask Price</span><strong>${priceCents}¢</strong></div>
+              <div class="stat-box"><span>Your Edge</span><strong>+${s.net_edge_cents}¢ / share</strong></div>
+              <div class="stat-box"><span>Return on Money</span><strong>+${s.expected_roi_pct}%</strong></div>
+              <div class="stat-box"><span>Contracts You Get</span><strong>${shares.toFixed(1)}</strong></div>
+              <div class="stat-box"><span>Evidence Confidence</span><strong>${(s.confidence_score * 100).toFixed(0)}%</strong></div>
+            </div>
+
+            <details>
+              <summary>Click to View All Possible Scenarios & Historical Proof</summary>
+              <ul style="margin-top:10px;">
+                ${(s.scenario_tree || []).map(b => `<li><strong>${b.scenario_name}</strong> (${(b.probability * 100).toFixed(0)}% chance) → <em>${b.impact_on_resolution}</em></li>`).join('')}
+              </ul>
+              <p><strong>Historical Proof:</strong> ${(s.historical_precedents || []).join(' | ')}</p>
+            </details>
+
+            <a class="market-btn" href="${s.url}" target="_blank" rel="noopener">Open Market on ${s.platform} →</a>
+          </div>
+        `;
+      }).join('');
+    }
+
+    init();
+  </script>
+</body>
+</html>

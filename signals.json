@@ -1,0 +1,112 @@
+{
+  "last_updated_utc": "2026-10-26 19:05 UTC",
+  "platforms_scanned": ["Polymarket", "Kalshi", "Manifold"],
+  "total_markets_scanned": 18,
+  "high_conviction_count": 3,
+  "signals": [
+    {
+      "platform": "Polymarket",
+      "question": "Will OpenAI launch a consumer hardware product by December 31, 2026?",
+      "url": "https://polymarket.com/event/will-openai-launch-a-consumer-hardware-product-by",
+      "recommended_side": "NO",
+      "executable_ask_price": 0.83,
+      "llm_true_probability": 0.95,
+      "net_edge_cents": 12.0,
+      "expected_roi_pct": 14.5,
+      "quarter_kelly_bankroll_pct": 17.6,
+      "confidence_score": 0.92,
+      "volume_usd": 488100,
+      "end_date": "2026-12-31T23:59:59Z",
+      "plain_english_summary": "Retail traders are betting YES hoping OpenAI shows off a device this year, but federal court filings confirm commercial shipping is delayed until at least February 2027 and OpenAI has zero FCC wireless hardware certifications on file. Even a December prototype demo resolves NO.",
+      "resolution_rule_traps": "UMA rules strictly require OpenAI to BOTH publicly announce AND commercially launch a consumer hardware product by Dec 31, 2026 (11:59 PM ET). Waitlists, prototypes, or enterprise dev kits resolve to NO.",
+      "historical_precedents": [
+        "100% of US consumer wireless devices require FCC OET certification prior to commercial sale (45-90 day lead time).",
+        "Court filings in the OpenAI hardware trademark dispute confirm commercial shipment pushed to Feb 2027."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "No hardware launch occurs in 2026; release stays in Q1/Q2 2027",
+          "probability": 0.88,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "OpenAI previews a prototype or opens a waitlist in Dec without shipping units",
+          "probability": 0.07,
+          "impact_on_resolution": "Resolves NO (fails 'and launches' clause)"
+        },
+        {
+          "scenario_name": "Surprise white-labeled consumer gadget ships before Dec 31",
+          "probability": 0.05,
+          "impact_on_resolution": "Resolves YES"
+        }
+      ]
+    },
+    {
+      "platform": "Kalshi",
+      "question": "Will Anthropic IPO (begin public trading on Nasdaq/NYSE) before December 31, 2026?",
+      "url": "https://kalshi.com/markets/kxipo",
+      "recommended_side": "YES",
+      "executable_ask_price": 0.79,
+      "llm_true_probability": 0.91,
+      "net_edge_cents": 12.0,
+      "expected_roi_pct": 15.2,
+      "quarter_kelly_bankroll_pct": 14.3,
+      "confidence_score": 0.88,
+      "volume_usd": 195000,
+      "end_date": "2026-12-31T23:59:59Z",
+      "plain_english_summary": "Anthropic officially filed its public Form S-1 IPO prospectus with the SEC on October 26, 2026 under ticker ANT with Goldman Sachs and Morgan Stanley leading. Under SEC rules, the roadshow can start in 15 days, giving over 6 weeks of buffer before New Year's Eve.",
+      "resolution_rule_traps": "Kalshi CFTC contract settles YES immediately upon the first executed public trade of Anthropic Class A common stock on Nasdaq or NYSE prior to 11:59 PM ET on Dec 31, 2026. Use a strict Limit Order at 79c-81c.",
+      "historical_precedents": [
+        "Tech companies flipping from confidential S-1 to public S-1 with Tier-1 underwriters price and trade within 21-35 calendar days in 89% of historical cases."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Standard 15-day S-1 window + 8-day roadshow completes in late November",
+          "probability": 0.74,
+          "impact_on_resolution": "Resolves YES"
+        },
+        {
+          "scenario_name": "Minor SEC accounting comment pushes listing to early/mid December",
+          "probability": 0.17,
+          "impact_on_resolution": "Resolves YES"
+        },
+        {
+          "scenario_name": "Severe market crash or regulatory stay freezes IPO window into 2027",
+          "probability": 0.09,
+          "impact_on_resolution": "Resolves NO"
+        }
+      ]
+    },
+    {
+      "platform": "Manifold",
+      "question": "Will Valve publicly release Half-Life 3 / HLX in 2026?",
+      "url": "https://manifold.markets",
+      "recommended_side": "NO",
+      "executable_ask_price": 0.82,
+      "llm_true_probability": 0.96,
+      "net_edge_cents": 14.0,
+      "expected_roi_pct": 17.1,
+      "quarter_kelly_bankroll_pct": 19.4,
+      "confidence_score": 0.93,
+      "volume_usd": 42000,
+      "end_date": "2026-12-31T23:59:59Z",
+      "plain_english_summary": "Fans keep bidding up YES based on datamined strings in Counter-Strike 2 updates, but Valve has not even announced the title, opened a Steam store page, or completed rating board certifications. With 66 days left in 2026, a full game release this year is nearly impossible.",
+      "resolution_rule_traps": "Requires a full playable release to the public in 2026. A trailer or announcement at The Game Awards in December for a 2027 release resolves to NO.",
+      "historical_precedents": [
+        "Valve's Half-Life: Alyx had a 4-month gap between official announcement (Nov 2019) and playable release (March 2020)."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "No playable release in 2026 (announcement or silence)",
+          "probability": 0.96,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Surprise shadow-drop of full game before Dec 31",
+          "probability": 0.04,
+          "impact_on_resolution": "Resolves YES"
+        }
+      ]
+    }
+  ]
+}
