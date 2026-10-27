@@ -1,28 +1,32 @@
 {
-  "last_updated_utc": "2026-10-27 03:42 UTC",
+  "last_updated_utc": "2026-10-27 23:41 UTC",
   "platforms_scanned": [
     "Polymarket",
     "Kalshi",
     "Manifold"
   ],
-  "total_markets_scanned": 20,
+  "total_markets_scanned": 25,
   "high_conviction_count": 9,
+  "educated_risk_count": 6,
   "signals": [
     {
       "platform": "Manifold",
       "question": "Will ANOTHER millennium prize problem be solved in 2026?",
       "url": "https://manifold.markets/HumanClanker/will-another-millennium-prize-probl",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.673,
+      "payout_multiplier": 1.49,
       "llm_true_probability": 0.96,
       "likelihood_to_convert_pct": 96.0,
       "net_edge_cents": 28.7,
       "expected_roi_pct": 42.6,
       "quarter_kelly_bankroll_pct": 21.9,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.94,
       "volume_usd": 660038,
       "end_date": "2027-01-01T07:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Retail traders bid YES up to 34.7% after OpenAI claimed a Navier-Stokes proof on September 8, 2026, leaving NO available at an implied 67.3c ask. However, OpenAI's Navier-Stokes preprint is already mired in a leak dispute with NYU mathematician Tristan Buckmaster and intense peer-review skepticism, and solving a third Millennium Prize Problem (P vs NP, Riemann, Hodge, BSD, or Yang-Mills) in the remaining 65 days of 2026 is near-impossible.",
       "resolution_rule_traps": "Explicitly excludes both the Poincare Conjecture and Navier-Stokes Existence and Smoothness (claimed Sept 8, 2026). Requires a formal paper, arXiv preprint, or Lean computer-verified proof by a recognized mathematician, academic institution, or major AI lab for one of the remaining 5 problems before Dec 31, 2026, 11:59 PM UTC.",
       "historical_precedents": [
@@ -47,17 +51,20 @@
       "question": "GPT-6.1+ Astra released in October?",
       "url": "https://manifold.markets/Bayesian/gpt61-astra-released-in-october",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.778,
+      "payout_multiplier": 1.29,
       "llm_true_probability": 0.95,
       "likelihood_to_convert_pct": 95.0,
       "net_edge_cents": 17.2,
       "expected_roi_pct": 22.1,
       "quarter_kelly_bankroll_pct": 19.4,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.92,
       "volume_usd": 168825,
       "end_date": "2026-10-31T23:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
-      "plain_english_summary": "With only 5 days remaining in October 2026, OpenAI just shipped GPT-6.1 Terra (its medium-sized visual and computer-use model) on October 26 after holding back GPT-6.1 Astra for high-autonomy scope-boundary safety evaluations. Traders still pricing YES at 24.2% (NO ask 77.8c) have not updated for today's Terra release replacing Astra in the October slot.",
+      "plain_english_summary": "With only 4 days remaining in October 2026, OpenAI just shipped GPT-6.1 Terra (its medium-sized visual and computer-use model) on October 26 after holding back GPT-6.1 Astra for high-autonomy scope-boundary safety evaluations. Traders still pricing YES at 24.2% (NO ask 77.8c) have not updated for Terra replacing Astra in the October release slot.",
       "resolution_rule_traps": "Follows Polymarket model-release rules: requires general public or API release explicitly branded as GPT-6.1 Astra (or higher Astra point release) before October 31, 2026, 11:59 PM. Sibling models like GPT-6 Sol, GPT-6 Luna (Oct 7), and GPT-6.1 Terra (Oct 26) resolve this market to NO.",
       "historical_precedents": [
         "OpenAI released GPT-6 Astra preview on Sept 3-4, 2026, GPT-6 Sol/Luna safety updates on Oct 7, 2026, and GPT-6.1 Terra on Oct 26, 2026.",
@@ -70,7 +77,7 @@
           "impact_on_resolution": "Resolves NO"
         },
         {
-          "scenario_name": "Surprise back-to-back launch of GPT-6.1 Astra within 5 days of GPT-6.1 Terra before Oct 31 midnight",
+          "scenario_name": "Surprise back-to-back launch of GPT-6.1 Astra within 4 days of GPT-6.1 Terra before Oct 31 midnight",
           "probability": 0.05,
           "impact_on_resolution": "Resolves YES"
         }
@@ -81,16 +88,19 @@
       "question": "Will OpenAI announce another Millennium Prize solution? (Before Jan 1, 2027)",
       "url": "https://kalshi.com/markets/kxopenaianothermillennium",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.84,
+      "payout_multiplier": 1.19,
       "llm_true_probability": 0.96,
       "likelihood_to_convert_pct": 96.0,
       "net_edge_cents": 12.0,
       "expected_roi_pct": 14.3,
       "quarter_kelly_bankroll_pct": 18.8,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.93,
       "volume_usd": 51000,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Kalshi's CFTC-regulated contract lets you buy NO at 84c against OpenAI announcing a second Millennium Prize solution in the next 65 days. OpenAI's math team is still defending its controversial Sept 8 Navier-Stokes manuscript against leak allegations and peer review, making another full Millennium claim before New Year's Day highly improbable.",
       "resolution_rule_traps": "CFTC contract KXOPENAIANOTHERMILLENNIUM-28-27JAN01 explicitly excludes Navier-Stokes and Poincare. Requires OpenAI to expressly state that OpenAI or direct collaborators developed a complete solution to BSD, Hodge, P vs NP, Riemann, or Yang-Mills before Jan 1, 2027.",
       "historical_precedents": [
@@ -115,16 +125,19 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.82,
+      "payout_multiplier": 1.22,
       "llm_true_probability": 0.93,
       "likelihood_to_convert_pct": 93.0,
       "net_edge_cents": 11.0,
       "expected_roi_pct": 13.4,
       "quarter_kelly_bankroll_pct": 15.3,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.9,
       "volume_usd": 75546608,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Traders hedging Middle East tensions keep bidding YES at 18c-19c (leaving NO Ask at 82c), but Polymarket's UMA rules strictly require a U.S. ground invasion intended to occupy and establish control over Iranian land territory. Air strikes, naval blockades, or missile strikes resolve to NO, and the U.S. has zero ground invasion force staged with only 65 days left in 2026.",
       "resolution_rule_traps": "UMA rules require the United States to commence a military offensive intended to establish territorial control over sovereign land of Iran by Dec 31, 2026, 11:59 PM ET. Air strikes, drone strikes, naval blockades in the Strait of Hormuz, or special-forces raids that do not establish territorial control resolve to NO.",
       "historical_precedents": [
@@ -154,17 +167,20 @@
       "question": "Will Darline Graham run for and win Lindsey Graham's senate seat in the 2026 Senate Election?",
       "url": "https://manifold.markets/Vernas/will-darline-graham-run-for-and-win",
       "recommended_side": "YES",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.783,
+      "payout_multiplier": 1.28,
       "llm_true_probability": 0.88,
       "likelihood_to_convert_pct": 88.0,
       "net_edge_cents": 9.7,
       "expected_roi_pct": 12.4,
       "quarter_kelly_bankroll_pct": 11.2,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.86,
       "volume_usd": 5877,
       "end_date": "2026-11-03T23:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
-      "plain_english_summary": "This contract was priced down when created in July 2026 because appointed Sen. Darline Graham had to survive a 10-way August special GOP primary. She already won the August 25 Republican runoff with Trump's endorsement, meaning she only needs to win ruby-red South Carolina on November 3 (7 days away) where Republicans have won every Senate race since 1998.",
+      "plain_english_summary": "This contract was priced down when created in July 2026 because appointed Sen. Darline Graham had to survive a 10-way August special GOP primary. She already won the August 25 Republican runoff with Trump's endorsement, meaning she only needs to win ruby-red South Carolina on November 3 (6 days away) where Republicans have won every Senate race since 1998.",
       "resolution_rule_traps": "Resolves YES if Darline Graham officially runs, wins the August 2026 special Republican primary (already completed and won on Aug 25, 2026), and wins the general election on November 3, 2026 against Democrat Dr. Annie Andrews.",
       "historical_precedents": [
         "South Carolina has elected a Republican in 100% of U.S. Senate general elections since 2002 (24 consecutive years) and voted R+17.9 in the 2024 presidential election.",
@@ -188,16 +204,19 @@
       "question": "Will Trump invoke the Insurrection Act? (Before Jan 1, 2027)",
       "url": "https://kalshi.com/markets/kxinsurrection",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.83,
+      "payout_multiplier": 1.2,
       "llm_true_probability": 0.93,
       "likelihood_to_convert_pct": 93.0,
       "net_edge_cents": 10.0,
       "expected_roi_pct": 12.0,
       "quarter_kelly_bankroll_pct": 14.7,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.89,
       "volume_usd": 385637,
       "end_date": "2027-01-01T15:00:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Political commentators frequently speculate about the Insurrection Act around the November 2026 midterms, pushing YES to 19c and leaving NO at 83c. However, Kalshi rules strictly require a formal Presidential Proclamation and Executive Order under 10 U.S.C. 251-255 deploying federal troops domestically within the remaining 65 days of 2026.",
       "resolution_rule_traps": "CFTC contract KXINSURRECTION-29-27 resolves YES only if the President formally invokes the Insurrection Act to deploy the U.S. military or federalized National Guard within the U.S. before Jan 1, 2027. State-directed Title 32 National Guard deployments or rhetorical threats resolve to NO.",
       "historical_precedents": [
@@ -221,17 +240,20 @@
       "question": "Will Bitcoin reach $100,000 by December 31, 2026?",
       "url": "https://polymarket.com/event/what-price-will-bitcoin-hit-before-2027",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.83,
+      "payout_multiplier": 1.2,
       "llm_true_probability": 0.915,
       "likelihood_to_convert_pct": 91.5,
       "net_edge_cents": 8.5,
       "expected_roi_pct": 10.2,
       "quarter_kelly_bankroll_pct": 12.5,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.85,
       "volume_usd": 3969534,
       "end_date": "2027-01-01T05:00:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
-      "plain_english_summary": "Retail crypto bulls persistently overpay for out-of-the-money year-end $100,000 lottery tickets (bidding YES to 18c and leaving NO Ask at 83c). With only 65 days left in 2026, a hawkish Federal Reserve holding rates in October 2026, and Hormuz energy inflation pressures, Bitcoin has a 91.5% probability of staying below $100,000 through New Year's Eve.",
+      "plain_english_summary": "Retail crypto bulls persistently overpay for out-of-the-money year-end $100,000 lottery tickets (bidding YES to 18c and leaving NO Ask at 83c). With only 65 days left in 2026, a hawkish Federal Reserve holding rates at 3.75%-4.00% in October 2026, and Hormuz energy inflation pressures, Bitcoin has a 91.5% probability of staying below $100,000 through New Year's Eve.",
       "resolution_rule_traps": "Resolves strictly on the Binance BTC/USDT 1-minute candle 'High' price reaching >= $100,000.00 before Dec 31, 2026, 23:59 ET. Wicks on Coinbase, CME futures, or other spot pairs do not count.",
       "historical_precedents": [
         "Options-implied terminal probability for deep out-of-the-money 65-day BTC strikes consistently trades 6-9 points lower on Deribit than retail binary markets on Polymarket."
@@ -254,16 +276,19 @@
       "question": "The Last of Us S3: Release date (Before Jul 2027)",
       "url": "https://kalshi.com/markets/kxtvseasonreleasethelastofus",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.85,
+      "payout_multiplier": 1.18,
       "llm_true_probability": 0.935,
       "likelihood_to_convert_pct": 93.5,
       "net_edge_cents": 8.5,
       "expected_roi_pct": 10.0,
       "quarter_kelly_bankroll_pct": 14.2,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.91,
       "volume_usd": 16093,
       "end_date": "2027-07-01T14:00:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Filming for HBO's The Last of Us Season 3 in Vancouver (working title 'Calm Current') paused during the June 2026 World Cup and does not even wrap principal photography until late November 2026. Because Seasons 1 and 2 required 7 to 8 months of heavy VFX and post-production after wrapping, a premiere before July 1, 2027 is virtually impossible.",
       "resolution_rule_traps": "CFTC contract KXTVSEASONRELEASETHELASTOFUS-27-JUL requires the first episode of Season 3 to publicly air/stream on HBO/Max before July 1, 2027. Teaser trailers, press screeners, or festival previews do not count.",
       "historical_precedents": [
@@ -288,16 +313,19 @@
       "question": "Iran leadership change by December 31?",
       "url": "https://polymarket.com/event/iran-leadership-change-by",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.86,
+      "payout_multiplier": 1.16,
       "llm_true_probability": 0.945,
       "likelihood_to_convert_pct": 94.5,
       "net_edge_cents": 8.5,
       "expected_roi_pct": 9.9,
       "quarter_kelly_bankroll_pct": 15.2,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.88,
       "volume_usd": 5532155,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Rumors about Supreme Leader Mojtaba Khamenei governing via written decrees rather than public TV appearances since the February 2026 strikes keep YES elevated at 15c (NO Ask 86c). However, the Assembly of Experts and IRGC apparatus remain firmly consolidated behind him, and with only 65 days left in 2026, formal removal or loss of de facto power has <5.5% probability.",
       "resolution_rule_traps": "Resolves YES only if Mojtaba Khamenei is removed from power, detained, resigns, or ceases to act as de facto leader of Iran by Dec 31, 2026 ET. Governing out of public view via written decrees while retaining IRGC command resolves to NO.",
       "historical_precedents": [
@@ -317,22 +345,264 @@
       ]
     }
   ],
+  "educated_risk_signals": [
+    {
+      "platform": "Kalshi",
+      "question": "Next Fed rate hike? (Before 2027)",
+      "url": "https://kalshi.com/markets/kxfedhike",
+      "recommended_side": "NO",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.22,
+      "payout_multiplier": 4.55,
+      "llm_true_probability": 0.36,
+      "likelihood_to_convert_pct": 36.0,
+      "net_edge_cents": 14.0,
+      "expected_roi_pct": 63.6,
+      "quarter_kelly_bankroll_pct": 4.5,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.85,
+      "volume_usd": 125389,
+      "end_date": "2027-01-01T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 4.55x PLAY (+354.5% Profit if Converted): Following the September 2026 hike to 3.75%-4.00%, the Fed is ~95% locked to pause at the Oct 27-28 FOMC meeting. That means this entire contract rests on a single remaining meeting on December 8-9, 2026. While hawks forecast a December 25 bps hike (~64%), Fed Chair Kevin Warsh, John Williams, and Christopher Waller have signaled patience\u2014giving a December hold (NO hike before 2027) a 36.0% true probability while Kalshi offers 22c (4.55x your money).",
+      "resolution_rule_traps": "CFTC contract KXFEDHIKE-2-26DEC31 resolves to NO ($1.00 payout per 22c share) if the FOMC holds or cuts the target federal funds range at both the Oct 27-28 and Dec 8-9, 2026 meetings.",
+      "historical_precedents": [
+        "After pausing in an election-week FOMC meeting, the Federal Reserve has extended its pause through the December meeting ~40% of the time when core inflation trends moderate.",
+        "Polymarket prices an October 2026 FOMC rate hold at 93.7%, leaving only the December 8-9 meeting as a live hurdle."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "FOMC pauses in Oct 2026 and hikes 25 bps at the Dec 8-9, 2026 meeting",
+          "probability": 0.615,
+          "impact_on_resolution": "Resolves YES"
+        },
+        {
+          "scenario_name": "FOMC pauses in Oct 2026 and extends its rate hold through the Dec 8-9, 2026 meeting",
+          "probability": 0.36,
+          "impact_on_resolution": "Resolves NO (4.55x Payout Wins)"
+        },
+        {
+          "scenario_name": "Surprise rate hike at the Oct 27-28, 2026 FOMC meeting",
+          "probability": 0.025,
+          "impact_on_resolution": "Resolves YES"
+        }
+      ]
+    },
+    {
+      "platform": "Polymarket",
+      "question": "Billionaire one-time wealth tax passes in California election 2026?",
+      "url": "https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.25,
+      "payout_multiplier": 4.0,
+      "llm_true_probability": 0.38,
+      "likelihood_to_convert_pct": 38.0,
+      "net_edge_cents": 13.0,
+      "expected_roi_pct": 52.0,
+      "quarter_kelly_bankroll_pct": 4.3,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.85,
+      "volume_usd": 4234997,
+      "end_date": "2026-11-04T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 4.00x PLAY (+300.0% Profit if Converted): Polymarket traders dumped YES down to 25c assuming California's billionaire wealth tax wouldn't qualify or would get crushed. In reality, Proposition 40 (a 5% one-time tax on >$1B net worth to backfill Medi-Cal cuts) is on the Nov 3, 2026 ballot and LED in both UC Berkeley IGS polls (48%-41% in Aug; 45%-42% in late Sept). Even after discounting for late opposition ad blitzes, YES has a 38.0% true conversion chance at 4.00x (25c) odds.",
+      "resolution_rule_traps": "Resolves YES if California Proposition 40 receives >50.0% 'Yes' votes in the certified November 3, 2026 general election results (even if subsequently challenged in court or contested alongside Proposition 42).",
+      "historical_precedents": [
+        "UC Berkeley IGS Likely Voter Polls showed Proposition 40 ahead 48% to 41% in August 2026 and ahead 45% to 42% in late September 2026.",
+        "California voters previously passed high-earner healthcare/education tax initiatives (Prop 63, Prop 30, Prop 55) when tied directly to Medi-Cal and public school funding."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Heavy late tech-funded opposition ads and Gov. Newsom's opposition push Prop 40 below 50% on Nov 3",
+          "probability": 0.62,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Union turnout (SEIU-UHW) carries Proposition 40 past 50% Yes on Nov 3, 2026",
+          "probability": 0.38,
+          "impact_on_resolution": "Resolves YES (4.00x Payout Wins)"
+        }
+      ]
+    },
+    {
+      "platform": "Polymarket",
+      "question": "2026 Balance of Power: R Senate, D House",
+      "url": "https://polymarket.com/event/balance-of-power-2026-midterms",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.27,
+      "payout_multiplier": 3.7,
+      "llm_true_probability": 0.4,
+      "likelihood_to_convert_pct": 40.0,
+      "net_edge_cents": 13.0,
+      "expected_roi_pct": 48.1,
+      "quarter_kelly_bankroll_pct": 4.5,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.87,
+      "volume_usd": 5375558,
+      "end_date": "2026-11-04T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 3.70x PLAY (+270.4% Profit if Converted): Republicans enter the Nov 3, 2026 midterms holding 53 Senate seats and only need 50 seats (with VP JD Vance breaking ties) to retain the Senate. Decision Desk HQ (DDHQ) gives Republicans a 43% probability of holding the Senate, and Democrats are 92% favorites to win the House. That puts the true joint probability of 'R Senate + D House' at 40.0%, while Polymarket offers 27c (3.70x payout).",
+      "resolution_rule_traps": "Under Polymarket UMA rules, a 50-50 Senate tie resolves as Republican Senate control because Republican Vice President JD Vance holds the constitutional tie-breaking vote.",
+      "historical_precedents": [
+        "Decision Desk HQ (late Oct 2026) projects a 43% Republican Senate hold probability alongside >90% Democratic House probability.",
+        "Split Congress (out-party wins House while Senate remains 50-52 seats for the structural-map-favored party) occurred in 2018 and 2022."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Democrats win the House and narrowly flip 4 Senate seats for a 51-49 D Senate, D House sweep",
+          "probability": 0.54,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Democrats win the House while Republicans hold >= 50 Senate seats (via Texas, Ohio, or Maine holds)",
+          "probability": 0.4,
+          "impact_on_resolution": "Resolves YES (3.70x Payout Wins)"
+        },
+        {
+          "scenario_name": "Republicans hold both the Senate and the House",
+          "probability": 0.06,
+          "impact_on_resolution": "Resolves NO"
+        }
+      ]
+    },
+    {
+      "platform": "Kalshi",
+      "question": "Ohio Governor-Senate combo (Amy Acton and Sherrod Brown win)",
+      "url": "https://kalshi.com/markets/kxohsengovcombo",
+      "recommended_side": "NO",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.35,
+      "payout_multiplier": 2.86,
+      "llm_true_probability": 0.51,
+      "likelihood_to_convert_pct": 51.0,
+      "net_edge_cents": 16.0,
+      "expected_roi_pct": 45.7,
+      "quarter_kelly_bankroll_pct": 6.2,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.84,
+      "volume_usd": 38962,
+      "end_date": "2027-11-03T15:00:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 2.86x PLAY (+185.7% Profit if Converted): Kalshi's combo contract pays out $1.00 on NO (35c ask) if EITHER Republican Vivek Ramaswamy wins Ohio Governor OR incumbent Republican Sen. Jon Husted wins Ohio Senate on Nov 3. Mid-October Fox News polling shows Acton leading Ramaswamy by just 2 points (50%-48%) and Marist shows Brown up 4 points (48%-44%) in a state Trump won by +11.2 points in 2024\u2014giving at least one Republican win (NO) a 51.0% probability.",
+      "resolution_rule_traps": "CFTC combination contract KXOHSENGOVCOMBO-26NOV-DEMDEM requires BOTH Democrats (Acton AND Brown) to win for YES. If EITHER Republican (Ramaswamy OR Husted) wins their race on Nov 3, 2026, the contract immediately resolves to NO.",
+      "historical_precedents": [
+        "Fox News Poll (Oct 15-19, 2026 Likely Voters) has Ohio Governor at 50% Acton - 48% Ramaswamy; Marist Poll (Oct 15-18, 2026) has Ohio Senate at 48% Brown - 44% Husted.",
+        "Ohio Republican statewide candidates have outperformed final October public polling averages by +3.8 points across the 2020, 2022, and 2024 cycles."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Both Democrats (Amy Acton and Sherrod Brown) sweep Ohio Governor and Senate on Nov 3",
+          "probability": 0.49,
+          "impact_on_resolution": "Resolves YES"
+        },
+        {
+          "scenario_name": "Split ticket: One Republican (either Husted or Ramaswamy) wins while one Democrat wins",
+          "probability": 0.29,
+          "impact_on_resolution": "Resolves NO (2.86x Payout Wins)"
+        },
+        {
+          "scenario_name": "Both Republicans (Vivek Ramaswamy and Jon Husted) win in Ohio on Nov 3",
+          "probability": 0.22,
+          "impact_on_resolution": "Resolves NO (2.86x Payout Wins)"
+        }
+      ]
+    },
+    {
+      "platform": "Polymarket",
+      "question": "Will the Republicans win the Texas Senate race in 2026?",
+      "url": "https://polymarket.com/event/texas-senate-election-winner",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.34,
+      "payout_multiplier": 2.94,
+      "llm_true_probability": 0.48,
+      "likelihood_to_convert_pct": 48.0,
+      "net_edge_cents": 14.0,
+      "expected_roi_pct": 41.2,
+      "quarter_kelly_bankroll_pct": 5.3,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.84,
+      "volume_usd": 3990808,
+      "end_date": "2026-11-04T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 2.94x PLAY (+194.1% Profit if Converted): After Ken Paxton defeated Sen. John Cornyn in the May 2026 GOP primary to face Democrat James Talarico, Polymarket traders over-extrapolated tight polls and dumped Republican odds to 34c. However, late-October Emerson (49%-48%) and UMass/YouGov (45%-45%) polls show a statistical dead heat in a state that voted R+13.7 in 2024 and hasn't elected a Democrat statewide since 1994\u2014giving YES a 48.0% true conversion chance at 2.94x odds.",
+      "resolution_rule_traps": "Resolves YES if Republican nominee Ken Paxton wins the 2026 Texas U.S. Senate election (inclusive of any runoff).",
+      "historical_precedents": [
+        "Late-October 2026 Emerson College poll shows 49% Talarico - 48% Paxton (1-point margin); early-October UMass/YouGov poll showed 45% - 45% tie.",
+        "Republicans have won 100% of statewide elections in Texas since 1994 (32 consecutive years), outperforming late-October Senate polling by +2.5 to +4.5 points in 2018, 2020, and 2024."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "James Talarico (D) pulls off a historic Texas Senate upset via suburban crossover turnout",
+          "probability": 0.52,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Ken Paxton (R) holds Texas via R+13.7 rural/exurban base turnout on Nov 3, 2026",
+          "probability": 0.48,
+          "impact_on_resolution": "Resolves YES (2.94x Payout Wins)"
+        }
+      ]
+    },
+    {
+      "platform": "Manifold",
+      "question": "Will Waymo One expand its SF Bay Area service area to Marin County by December 31, 2026?",
+      "url": "https://manifold.markets/Putcallparity/will-waymo-one-expand-its-sf-bay-ar",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.421,
+      "payout_multiplier": 2.38,
+      "llm_true_probability": 0.58,
+      "likelihood_to_convert_pct": 58.0,
+      "net_edge_cents": 15.9,
+      "expected_roi_pct": 37.8,
+      "quarter_kelly_bankroll_pct": 6.9,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.82,
+      "volume_usd": 31951,
+      "end_date": "2026-12-31T00:00:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 2.38x PLAY (+137.5% Profit if Converted): Traders pricing YES at 40.1% (42.1c ask) missed a critical resolution-rule clause: the market resolves YES if Waymo 'officially announces OR launches service in ANY part of Marin County' before Dec 31, 2026. Because the California Public Utilities Commission (CPUC) and DMV already approved Waymo's commercial Marin County expansion in August 2026, even an announcement or Golden Gate / Sausalito geofence extension converts YES.",
+      "resolution_rule_traps": "Creator clarification explicitly states: 'Market resolves YES if Waymo officially announces or launches service in any part of Marin County before the end date... Full coverage of Marin County is not required; availability in any part of the county is sufficient.'",
+      "historical_precedents": [
+        "In August 2026, the CPUC approved Waymo's Advice Letter expanding commercial driverless service across 18 California counties including Marin County.",
+        "Following prior CPUC Bay Area geofence approvals (Peninsula/Daly City/Freeways), Waymo announced or activated initial border coverage within 90-120 days."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Waymo officially announces or activates initial Marin County (e.g., Sausalito/Golden Gate) service before Dec 31, 2026",
+          "probability": 0.58,
+          "impact_on_resolution": "Resolves YES (2.38x Payout Wins)"
+        },
+        {
+          "scenario_name": "Waymo delays public Marin County announcement and geofence activation until Q1 2027",
+          "probability": 0.42,
+          "impact_on_resolution": "Resolves NO"
+        }
+      ]
+    }
+  ],
   "all_studied_opportunities": [
     {
       "platform": "Manifold",
       "question": "Will ANOTHER millennium prize problem be solved in 2026?",
       "url": "https://manifold.markets/HumanClanker/will-another-millennium-prize-probl",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.673,
+      "payout_multiplier": 1.49,
       "llm_true_probability": 0.96,
       "likelihood_to_convert_pct": 96.0,
       "net_edge_cents": 28.7,
       "expected_roi_pct": 42.6,
       "quarter_kelly_bankroll_pct": 21.9,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.94,
       "volume_usd": 660038,
       "end_date": "2027-01-01T07:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Retail traders bid YES up to 34.7% after OpenAI claimed a Navier-Stokes proof on September 8, 2026, leaving NO available at an implied 67.3c ask. However, OpenAI's Navier-Stokes preprint is already mired in a leak dispute with NYU mathematician Tristan Buckmaster and intense peer-review skepticism, and solving a third Millennium Prize Problem (P vs NP, Riemann, Hodge, BSD, or Yang-Mills) in the remaining 65 days of 2026 is near-impossible.",
       "resolution_rule_traps": "Explicitly excludes both the Poincare Conjecture and Navier-Stokes Existence and Smoothness (claimed Sept 8, 2026). Requires a formal paper, arXiv preprint, or Lean computer-verified proof by a recognized mathematician, academic institution, or major AI lab for one of the remaining 5 problems before Dec 31, 2026, 11:59 PM UTC.",
       "historical_precedents": [
@@ -357,17 +627,20 @@
       "question": "GPT-6.1+ Astra released in October?",
       "url": "https://manifold.markets/Bayesian/gpt61-astra-released-in-october",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.778,
+      "payout_multiplier": 1.29,
       "llm_true_probability": 0.95,
       "likelihood_to_convert_pct": 95.0,
       "net_edge_cents": 17.2,
       "expected_roi_pct": 22.1,
       "quarter_kelly_bankroll_pct": 19.4,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.92,
       "volume_usd": 168825,
       "end_date": "2026-10-31T23:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
-      "plain_english_summary": "With only 5 days remaining in October 2026, OpenAI just shipped GPT-6.1 Terra (its medium-sized visual and computer-use model) on October 26 after holding back GPT-6.1 Astra for high-autonomy scope-boundary safety evaluations. Traders still pricing YES at 24.2% (NO ask 77.8c) have not updated for today's Terra release replacing Astra in the October slot.",
+      "plain_english_summary": "With only 4 days remaining in October 2026, OpenAI just shipped GPT-6.1 Terra (its medium-sized visual and computer-use model) on October 26 after holding back GPT-6.1 Astra for high-autonomy scope-boundary safety evaluations. Traders still pricing YES at 24.2% (NO ask 77.8c) have not updated for Terra replacing Astra in the October release slot.",
       "resolution_rule_traps": "Follows Polymarket model-release rules: requires general public or API release explicitly branded as GPT-6.1 Astra (or higher Astra point release) before October 31, 2026, 11:59 PM. Sibling models like GPT-6 Sol, GPT-6 Luna (Oct 7), and GPT-6.1 Terra (Oct 26) resolve this market to NO.",
       "historical_precedents": [
         "OpenAI released GPT-6 Astra preview on Sept 3-4, 2026, GPT-6 Sol/Luna safety updates on Oct 7, 2026, and GPT-6.1 Terra on Oct 26, 2026.",
@@ -380,7 +653,7 @@
           "impact_on_resolution": "Resolves NO"
         },
         {
-          "scenario_name": "Surprise back-to-back launch of GPT-6.1 Astra within 5 days of GPT-6.1 Terra before Oct 31 midnight",
+          "scenario_name": "Surprise back-to-back launch of GPT-6.1 Astra within 4 days of GPT-6.1 Terra before Oct 31 midnight",
           "probability": 0.05,
           "impact_on_resolution": "Resolves YES"
         }
@@ -391,16 +664,19 @@
       "question": "Will OpenAI announce another Millennium Prize solution? (Before Jan 1, 2027)",
       "url": "https://kalshi.com/markets/kxopenaianothermillennium",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.84,
+      "payout_multiplier": 1.19,
       "llm_true_probability": 0.96,
       "likelihood_to_convert_pct": 96.0,
       "net_edge_cents": 12.0,
       "expected_roi_pct": 14.3,
       "quarter_kelly_bankroll_pct": 18.8,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.93,
       "volume_usd": 51000,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Kalshi's CFTC-regulated contract lets you buy NO at 84c against OpenAI announcing a second Millennium Prize solution in the next 65 days. OpenAI's math team is still defending its controversial Sept 8 Navier-Stokes manuscript against leak allegations and peer review, making another full Millennium claim before New Year's Day highly improbable.",
       "resolution_rule_traps": "CFTC contract KXOPENAIANOTHERMILLENNIUM-28-27JAN01 explicitly excludes Navier-Stokes and Poincare. Requires OpenAI to expressly state that OpenAI or direct collaborators developed a complete solution to BSD, Hodge, P vs NP, Riemann, or Yang-Mills before Jan 1, 2027.",
       "historical_precedents": [
@@ -425,16 +701,19 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.82,
+      "payout_multiplier": 1.22,
       "llm_true_probability": 0.93,
       "likelihood_to_convert_pct": 93.0,
       "net_edge_cents": 11.0,
       "expected_roi_pct": 13.4,
       "quarter_kelly_bankroll_pct": 15.3,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.9,
       "volume_usd": 75546608,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Traders hedging Middle East tensions keep bidding YES at 18c-19c (leaving NO Ask at 82c), but Polymarket's UMA rules strictly require a U.S. ground invasion intended to occupy and establish control over Iranian land territory. Air strikes, naval blockades, or missile strikes resolve to NO, and the U.S. has zero ground invasion force staged with only 65 days left in 2026.",
       "resolution_rule_traps": "UMA rules require the United States to commence a military offensive intended to establish territorial control over sovereign land of Iran by Dec 31, 2026, 11:59 PM ET. Air strikes, drone strikes, naval blockades in the Strait of Hormuz, or special-forces raids that do not establish territorial control resolve to NO.",
       "historical_precedents": [
@@ -464,17 +743,20 @@
       "question": "Will Darline Graham run for and win Lindsey Graham's senate seat in the 2026 Senate Election?",
       "url": "https://manifold.markets/Vernas/will-darline-graham-run-for-and-win",
       "recommended_side": "YES",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.783,
+      "payout_multiplier": 1.28,
       "llm_true_probability": 0.88,
       "likelihood_to_convert_pct": 88.0,
       "net_edge_cents": 9.7,
       "expected_roi_pct": 12.4,
       "quarter_kelly_bankroll_pct": 11.2,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.86,
       "volume_usd": 5877,
       "end_date": "2026-11-03T23:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
-      "plain_english_summary": "This contract was priced down when created in July 2026 because appointed Sen. Darline Graham had to survive a 10-way August special GOP primary. She already won the August 25 Republican runoff with Trump's endorsement, meaning she only needs to win ruby-red South Carolina on November 3 (7 days away) where Republicans have won every Senate race since 1998.",
+      "plain_english_summary": "This contract was priced down when created in July 2026 because appointed Sen. Darline Graham had to survive a 10-way August special GOP primary. She already won the August 25 Republican runoff with Trump's endorsement, meaning she only needs to win ruby-red South Carolina on November 3 (6 days away) where Republicans have won every Senate race since 1998.",
       "resolution_rule_traps": "Resolves YES if Darline Graham officially runs, wins the August 2026 special Republican primary (already completed and won on Aug 25, 2026), and wins the general election on November 3, 2026 against Democrat Dr. Annie Andrews.",
       "historical_precedents": [
         "South Carolina has elected a Republican in 100% of U.S. Senate general elections since 2002 (24 consecutive years) and voted R+17.9 in the 2024 presidential election.",
@@ -498,16 +780,19 @@
       "question": "Will Trump invoke the Insurrection Act? (Before Jan 1, 2027)",
       "url": "https://kalshi.com/markets/kxinsurrection",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.83,
+      "payout_multiplier": 1.2,
       "llm_true_probability": 0.93,
       "likelihood_to_convert_pct": 93.0,
       "net_edge_cents": 10.0,
       "expected_roi_pct": 12.0,
       "quarter_kelly_bankroll_pct": 14.7,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.89,
       "volume_usd": 385637,
       "end_date": "2027-01-01T15:00:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Political commentators frequently speculate about the Insurrection Act around the November 2026 midterms, pushing YES to 19c and leaving NO at 83c. However, Kalshi rules strictly require a formal Presidential Proclamation and Executive Order under 10 U.S.C. 251-255 deploying federal troops domestically within the remaining 65 days of 2026.",
       "resolution_rule_traps": "CFTC contract KXINSURRECTION-29-27 resolves YES only if the President formally invokes the Insurrection Act to deploy the U.S. military or federalized National Guard within the U.S. before Jan 1, 2027. State-directed Title 32 National Guard deployments or rhetorical threats resolve to NO.",
       "historical_precedents": [
@@ -531,17 +816,20 @@
       "question": "Will Bitcoin reach $100,000 by December 31, 2026?",
       "url": "https://polymarket.com/event/what-price-will-bitcoin-hit-before-2027",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.83,
+      "payout_multiplier": 1.2,
       "llm_true_probability": 0.915,
       "likelihood_to_convert_pct": 91.5,
       "net_edge_cents": 8.5,
       "expected_roi_pct": 10.2,
       "quarter_kelly_bankroll_pct": 12.5,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.85,
       "volume_usd": 3969534,
       "end_date": "2027-01-01T05:00:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
-      "plain_english_summary": "Retail crypto bulls persistently overpay for out-of-the-money year-end $100,000 lottery tickets (bidding YES to 18c and leaving NO Ask at 83c). With only 65 days left in 2026, a hawkish Federal Reserve holding rates in October 2026, and Hormuz energy inflation pressures, Bitcoin has a 91.5% probability of staying below $100,000 through New Year's Eve.",
+      "plain_english_summary": "Retail crypto bulls persistently overpay for out-of-the-money year-end $100,000 lottery tickets (bidding YES to 18c and leaving NO Ask at 83c). With only 65 days left in 2026, a hawkish Federal Reserve holding rates at 3.75%-4.00% in October 2026, and Hormuz energy inflation pressures, Bitcoin has a 91.5% probability of staying below $100,000 through New Year's Eve.",
       "resolution_rule_traps": "Resolves strictly on the Binance BTC/USDT 1-minute candle 'High' price reaching >= $100,000.00 before Dec 31, 2026, 23:59 ET. Wicks on Coinbase, CME futures, or other spot pairs do not count.",
       "historical_precedents": [
         "Options-implied terminal probability for deep out-of-the-money 65-day BTC strikes consistently trades 6-9 points lower on Deribit than retail binary markets on Polymarket."
@@ -564,16 +852,19 @@
       "question": "The Last of Us S3: Release date (Before Jul 2027)",
       "url": "https://kalshi.com/markets/kxtvseasonreleasethelastofus",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.85,
+      "payout_multiplier": 1.18,
       "llm_true_probability": 0.935,
       "likelihood_to_convert_pct": 93.5,
       "net_edge_cents": 8.5,
       "expected_roi_pct": 10.0,
       "quarter_kelly_bankroll_pct": 14.2,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.91,
       "volume_usd": 16093,
       "end_date": "2027-07-01T14:00:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Filming for HBO's The Last of Us Season 3 in Vancouver (working title 'Calm Current') paused during the June 2026 World Cup and does not even wrap principal photography until late November 2026. Because Seasons 1 and 2 required 7 to 8 months of heavy VFX and post-production after wrapping, a premiere before July 1, 2027 is virtually impossible.",
       "resolution_rule_traps": "CFTC contract KXTVSEASONRELEASETHELASTOFUS-27-JUL requires the first episode of Season 3 to publicly air/stream on HBO/Max before July 1, 2027. Teaser trailers, press screeners, or festival previews do not count.",
       "historical_precedents": [
@@ -598,16 +889,19 @@
       "question": "Iran leadership change by December 31?",
       "url": "https://polymarket.com/event/iran-leadership-change-by",
       "recommended_side": "NO",
+      "strategy_tier": "SAFE_COMPOUNDER",
+      "status": "QUALIFIED_HIGH_CONVICTION",
       "executable_ask_price": 0.86,
+      "payout_multiplier": 1.16,
       "llm_true_probability": 0.945,
       "likelihood_to_convert_pct": 94.5,
       "net_edge_cents": 8.5,
       "expected_roi_pct": 9.9,
       "quarter_kelly_bankroll_pct": 15.2,
+      "recommended_bankroll_stake_pct": 20.0,
       "confidence_score": 0.88,
       "volume_usd": 5532155,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "QUALIFIED_HIGH_CONVICTION",
       "plain_english_summary": "Rumors about Supreme Leader Mojtaba Khamenei governing via written decrees rather than public TV appearances since the February 2026 strikes keep YES elevated at 15c (NO Ask 86c). However, the Assembly of Experts and IRGC apparatus remain firmly consolidated behind him, and with only 65 days left in 2026, formal removal or loss of de facto power has <5.5% probability.",
       "resolution_rule_traps": "Resolves YES only if Mojtaba Khamenei is removed from power, detained, resigns, or ceases to act as de facto leader of Iran by Dec 31, 2026 ET. Governing out of public view via written decrees while retaining IRGC command resolves to NO.",
       "historical_precedents": [
@@ -627,34 +921,274 @@
       ]
     },
     {
-      "platform": "Polymarket",
-      "question": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "url": "https://polymarket.com/event/us-iran-final-nuclear-deal-by-20260621201254412",
+      "platform": "Kalshi",
+      "question": "Next Fed rate hike? (Before 2027)",
+      "url": "https://kalshi.com/markets/kxfedhike",
       "recommended_side": "NO",
-      "executable_ask_price": 0.88,
-      "llm_true_probability": 0.955,
-      "likelihood_to_convert_pct": 95.5,
-      "net_edge_cents": 7.5,
-      "expected_roi_pct": 8.5,
-      "quarter_kelly_bankroll_pct": 15.6,
-      "confidence_score": 0.91,
-      "volume_usd": 3624360,
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.22,
+      "payout_multiplier": 4.55,
+      "llm_true_probability": 0.36,
+      "likelihood_to_convert_pct": 36.0,
+      "net_edge_cents": 14.0,
+      "expected_roi_pct": 63.6,
+      "quarter_kelly_bankroll_pct": 4.5,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.85,
+      "volume_usd": 125389,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
-      "plain_english_summary": "Near-miss (+7.5c edge vs +8.0c cutoff): Although the U.S. and Iran signed a 60-day framework in June 2026, talks fractured by July when the U.S. reinstated its naval blockade of Iranian vessels. Signing a comprehensive final nuclear treaty in the next 65 days during an active naval blockade is 95.5% unlikely.",
-      "resolution_rule_traps": "Requires a formal written final diplomatic instrument signed or officially adopted by both the U.S. and Iran by Dec 31, 2026, 11:59 PM ET. Temporary ceasefire extensions or interim framework renewals resolve to NO.",
+      "plain_english_summary": "HIGH-PAYOUT 4.55x PLAY (+354.5% Profit if Converted): Following the September 2026 hike to 3.75%-4.00%, the Fed is ~95% locked to pause at the Oct 27-28 FOMC meeting. That means this entire contract rests on a single remaining meeting on December 8-9, 2026. While hawks forecast a December 25 bps hike (~64%), Fed Chair Kevin Warsh, John Williams, and Christopher Waller have signaled patience\u2014giving a December hold (NO hike before 2027) a 36.0% true probability while Kalshi offers 22c (4.55x your money).",
+      "resolution_rule_traps": "CFTC contract KXFEDHIKE-2-26DEC31 resolves to NO ($1.00 payout per 22c share) if the FOMC holds or cuts the target federal funds range at both the Oct 27-28 and Dec 8-9, 2026 meetings.",
       "historical_precedents": [
-        "The 2013-2015 JCPOA required 20 months of negotiations after the November 2013 JPOA interim framework."
+        "After pausing in an election-week FOMC meeting, the Federal Reserve has extended its pause through the December meeting ~40% of the time when core inflation trends moderate.",
+        "Polymarket prices an October 2026 FOMC rate hold at 93.7%, leaving only the December 8-9 meeting as a live hurdle."
       ],
       "scenario_tree": [
         {
-          "scenario_name": "No final mutually signed nuclear treaty is completed by Dec 31, 2026",
-          "probability": 0.955,
+          "scenario_name": "FOMC pauses in Oct 2026 and hikes 25 bps at the Dec 8-9, 2026 meeting",
+          "probability": 0.615,
+          "impact_on_resolution": "Resolves YES"
+        },
+        {
+          "scenario_name": "FOMC pauses in Oct 2026 and extends its rate hold through the Dec 8-9, 2026 meeting",
+          "probability": 0.36,
+          "impact_on_resolution": "Resolves NO (4.55x Payout Wins)"
+        },
+        {
+          "scenario_name": "Surprise rate hike at the Oct 27-28, 2026 FOMC meeting",
+          "probability": 0.025,
+          "impact_on_resolution": "Resolves YES"
+        }
+      ]
+    },
+    {
+      "platform": "Polymarket",
+      "question": "Billionaire one-time wealth tax passes in California election 2026?",
+      "url": "https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.25,
+      "payout_multiplier": 4.0,
+      "llm_true_probability": 0.38,
+      "likelihood_to_convert_pct": 38.0,
+      "net_edge_cents": 13.0,
+      "expected_roi_pct": 52.0,
+      "quarter_kelly_bankroll_pct": 4.3,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.85,
+      "volume_usd": 4234997,
+      "end_date": "2026-11-04T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 4.00x PLAY (+300.0% Profit if Converted): Polymarket traders dumped YES down to 25c assuming California's billionaire wealth tax wouldn't qualify or would get crushed. In reality, Proposition 40 (a 5% one-time tax on >$1B net worth to backfill Medi-Cal cuts) is on the Nov 3, 2026 ballot and LED in both UC Berkeley IGS polls (48%-41% in Aug; 45%-42% in late Sept). Even after discounting for late opposition ad blitzes, YES has a 38.0% true conversion chance at 4.00x (25c) odds.",
+      "resolution_rule_traps": "Resolves YES if California Proposition 40 receives >50.0% 'Yes' votes in the certified November 3, 2026 general election results (even if subsequently challenged in court or contested alongside Proposition 42).",
+      "historical_precedents": [
+        "UC Berkeley IGS Likely Voter Polls showed Proposition 40 ahead 48% to 41% in August 2026 and ahead 45% to 42% in late September 2026.",
+        "California voters previously passed high-earner healthcare/education tax initiatives (Prop 63, Prop 30, Prop 55) when tied directly to Medi-Cal and public school funding."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Heavy late tech-funded opposition ads and Gov. Newsom's opposition push Prop 40 below 50% on Nov 3",
+          "probability": 0.62,
           "impact_on_resolution": "Resolves NO"
         },
         {
-          "scenario_name": "Surprise year-end diplomatic breakthrough produces a signed final nuclear accord",
-          "probability": 0.045,
+          "scenario_name": "Union turnout (SEIU-UHW) carries Proposition 40 past 50% Yes on Nov 3, 2026",
+          "probability": 0.38,
+          "impact_on_resolution": "Resolves YES (4.00x Payout Wins)"
+        }
+      ]
+    },
+    {
+      "platform": "Polymarket",
+      "question": "2026 Balance of Power: R Senate, D House",
+      "url": "https://polymarket.com/event/balance-of-power-2026-midterms",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.27,
+      "payout_multiplier": 3.7,
+      "llm_true_probability": 0.4,
+      "likelihood_to_convert_pct": 40.0,
+      "net_edge_cents": 13.0,
+      "expected_roi_pct": 48.1,
+      "quarter_kelly_bankroll_pct": 4.5,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.87,
+      "volume_usd": 5375558,
+      "end_date": "2026-11-04T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 3.70x PLAY (+270.4% Profit if Converted): Republicans enter the Nov 3, 2026 midterms holding 53 Senate seats and only need 50 seats (with VP JD Vance breaking ties) to retain the Senate. Decision Desk HQ (DDHQ) gives Republicans a 43% probability of holding the Senate, and Democrats are 92% favorites to win the House. That puts the true joint probability of 'R Senate + D House' at 40.0%, while Polymarket offers 27c (3.70x payout).",
+      "resolution_rule_traps": "Under Polymarket UMA rules, a 50-50 Senate tie resolves as Republican Senate control because Republican Vice President JD Vance holds the constitutional tie-breaking vote.",
+      "historical_precedents": [
+        "Decision Desk HQ (late Oct 2026) projects a 43% Republican Senate hold probability alongside >90% Democratic House probability.",
+        "Split Congress (out-party wins House while Senate remains 50-52 seats for the structural-map-favored party) occurred in 2018 and 2022."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Democrats win the House and narrowly flip 4 Senate seats for a 51-49 D Senate, D House sweep",
+          "probability": 0.54,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Democrats win the House while Republicans hold >= 50 Senate seats (via Texas, Ohio, or Maine holds)",
+          "probability": 0.4,
+          "impact_on_resolution": "Resolves YES (3.70x Payout Wins)"
+        },
+        {
+          "scenario_name": "Republicans hold both the Senate and the House",
+          "probability": 0.06,
+          "impact_on_resolution": "Resolves NO"
+        }
+      ]
+    },
+    {
+      "platform": "Kalshi",
+      "question": "Ohio Governor-Senate combo (Amy Acton and Sherrod Brown win)",
+      "url": "https://kalshi.com/markets/kxohsengovcombo",
+      "recommended_side": "NO",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.35,
+      "payout_multiplier": 2.86,
+      "llm_true_probability": 0.51,
+      "likelihood_to_convert_pct": 51.0,
+      "net_edge_cents": 16.0,
+      "expected_roi_pct": 45.7,
+      "quarter_kelly_bankroll_pct": 6.2,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.84,
+      "volume_usd": 38962,
+      "end_date": "2027-11-03T15:00:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 2.86x PLAY (+185.7% Profit if Converted): Kalshi's combo contract pays out $1.00 on NO (35c ask) if EITHER Republican Vivek Ramaswamy wins Ohio Governor OR incumbent Republican Sen. Jon Husted wins Ohio Senate on Nov 3. Mid-October Fox News polling shows Acton leading Ramaswamy by just 2 points (50%-48%) and Marist shows Brown up 4 points (48%-44%) in a state Trump won by +11.2 points in 2024\u2014giving at least one Republican win (NO) a 51.0% probability.",
+      "resolution_rule_traps": "CFTC combination contract KXOHSENGOVCOMBO-26NOV-DEMDEM requires BOTH Democrats (Acton AND Brown) to win for YES. If EITHER Republican (Ramaswamy OR Husted) wins their race on Nov 3, 2026, the contract immediately resolves to NO.",
+      "historical_precedents": [
+        "Fox News Poll (Oct 15-19, 2026 Likely Voters) has Ohio Governor at 50% Acton - 48% Ramaswamy; Marist Poll (Oct 15-18, 2026) has Ohio Senate at 48% Brown - 44% Husted.",
+        "Ohio Republican statewide candidates have outperformed final October public polling averages by +3.8 points across the 2020, 2022, and 2024 cycles."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Both Democrats (Amy Acton and Sherrod Brown) sweep Ohio Governor and Senate on Nov 3",
+          "probability": 0.49,
+          "impact_on_resolution": "Resolves YES"
+        },
+        {
+          "scenario_name": "Split ticket: One Republican (either Husted or Ramaswamy) wins while one Democrat wins",
+          "probability": 0.29,
+          "impact_on_resolution": "Resolves NO (2.86x Payout Wins)"
+        },
+        {
+          "scenario_name": "Both Republicans (Vivek Ramaswamy and Jon Husted) win in Ohio on Nov 3",
+          "probability": 0.22,
+          "impact_on_resolution": "Resolves NO (2.86x Payout Wins)"
+        }
+      ]
+    },
+    {
+      "platform": "Polymarket",
+      "question": "Will the Republicans win the Texas Senate race in 2026?",
+      "url": "https://polymarket.com/event/texas-senate-election-winner",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.34,
+      "payout_multiplier": 2.94,
+      "llm_true_probability": 0.48,
+      "likelihood_to_convert_pct": 48.0,
+      "net_edge_cents": 14.0,
+      "expected_roi_pct": 41.2,
+      "quarter_kelly_bankroll_pct": 5.3,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.84,
+      "volume_usd": 3990808,
+      "end_date": "2026-11-04T04:59:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 2.94x PLAY (+194.1% Profit if Converted): After Ken Paxton defeated Sen. John Cornyn in the May 2026 GOP primary to face Democrat James Talarico, Polymarket traders over-extrapolated tight polls and dumped Republican odds to 34c. However, late-October Emerson (49%-48%) and UMass/YouGov (45%-45%) polls show a statistical dead heat in a state that voted R+13.7 in 2024 and hasn't elected a Democrat statewide since 1994\u2014giving YES a 48.0% true conversion chance at 2.94x odds.",
+      "resolution_rule_traps": "Resolves YES if Republican nominee Ken Paxton wins the 2026 Texas U.S. Senate election (inclusive of any runoff).",
+      "historical_precedents": [
+        "Late-October 2026 Emerson College poll shows 49% Talarico - 48% Paxton (1-point margin); early-October UMass/YouGov poll showed 45% - 45% tie.",
+        "Republicans have won 100% of statewide elections in Texas since 1994 (32 consecutive years), outperforming late-October Senate polling by +2.5 to +4.5 points in 2018, 2020, and 2024."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "James Talarico (D) pulls off a historic Texas Senate upset via suburban crossover turnout",
+          "probability": 0.52,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Ken Paxton (R) holds Texas via R+13.7 rural/exurban base turnout on Nov 3, 2026",
+          "probability": 0.48,
+          "impact_on_resolution": "Resolves YES (2.94x Payout Wins)"
+        }
+      ]
+    },
+    {
+      "platform": "Manifold",
+      "question": "Will Waymo One expand its SF Bay Area service area to Marin County by December 31, 2026?",
+      "url": "https://manifold.markets/Putcallparity/will-waymo-one-expand-its-sf-bay-ar",
+      "recommended_side": "YES",
+      "strategy_tier": "EDUCATED_RISK_HIGH_PAYOUT",
+      "status": "EDUCATED_RISK_HIGH_PAYOUT",
+      "executable_ask_price": 0.421,
+      "payout_multiplier": 2.38,
+      "llm_true_probability": 0.58,
+      "likelihood_to_convert_pct": 58.0,
+      "net_edge_cents": 15.9,
+      "expected_roi_pct": 37.8,
+      "quarter_kelly_bankroll_pct": 6.9,
+      "recommended_bankroll_stake_pct": 5.0,
+      "confidence_score": 0.82,
+      "volume_usd": 31951,
+      "end_date": "2026-12-31T00:00:00Z",
+      "plain_english_summary": "HIGH-PAYOUT 2.38x PLAY (+137.5% Profit if Converted): Traders pricing YES at 40.1% (42.1c ask) missed a critical resolution-rule clause: the market resolves YES if Waymo 'officially announces OR launches service in ANY part of Marin County' before Dec 31, 2026. Because the California Public Utilities Commission (CPUC) and DMV already approved Waymo's commercial Marin County expansion in August 2026, even an announcement or Golden Gate / Sausalito geofence extension converts YES.",
+      "resolution_rule_traps": "Creator clarification explicitly states: 'Market resolves YES if Waymo officially announces or launches service in any part of Marin County before the end date... Full coverage of Marin County is not required; availability in any part of the county is sufficient.'",
+      "historical_precedents": [
+        "In August 2026, the CPUC approved Waymo's Advice Letter expanding commercial driverless service across 18 California counties including Marin County.",
+        "Following prior CPUC Bay Area geofence approvals (Peninsula/Daly City/Freeways), Waymo announced or activated initial border coverage within 90-120 days."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Waymo officially announces or activates initial Marin County (e.g., Sausalito/Golden Gate) service before Dec 31, 2026",
+          "probability": 0.58,
+          "impact_on_resolution": "Resolves YES (2.38x Payout Wins)"
+        },
+        {
+          "scenario_name": "Waymo delays public Marin County announcement and geofence activation until Q1 2027",
+          "probability": 0.42,
+          "impact_on_resolution": "Resolves NO"
+        }
+      ]
+    },
+    {
+      "platform": "Kalshi",
+      "question": "When will Bill Belichick leave North Carolina? (Before Dec 1, 2026)",
+      "url": "https://kalshi.com/markets/kxncaafcoachleave",
+      "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
+      "executable_ask_price": 0.77,
+      "payout_multiplier": 1.3,
+      "llm_true_probability": 0.84,
+      "likelihood_to_convert_pct": 84.0,
+      "net_edge_cents": 7.0,
+      "expected_roi_pct": 9.1,
+      "quarter_kelly_bankroll_pct": 7.6,
+      "recommended_bankroll_stake_pct": 0.0,
+      "confidence_score": 0.82,
+      "volume_usd": 15718,
+      "end_date": "2026-12-01T04:59:00Z",
+      "plain_english_summary": "Near-miss (+7.0c edge): After a rocky 4-8 debut in 2025, UNC has rebounded in fall 2026 with wins over ranked Pitt and rival Duke, and firing Belichick before Dec 1, 2026 would trigger a >$20M guaranteed buyout across his first three contract years.",
+      "resolution_rule_traps": "Requires Belichick to officially cease being head coach at UNC before December 1, 2026 (prior to NFL Black Monday).",
+      "historical_precedents": [
+        "Guaranteed $10M/yr college coaching contracts with >$20M buyouts are rarely terminated mid-season when the team is in bowl contention."
+      ],
+      "scenario_tree": [
+        {
+          "scenario_name": "Belichick coaches through the end of the November 2026 regular season past Dec 1",
+          "probability": 0.84,
+          "impact_on_resolution": "Resolves NO"
+        },
+        {
+          "scenario_name": "Belichick resigns or is fired before Dec 1, 2026",
+          "probability": 0.16,
           "impact_on_resolution": "Resolves YES"
         }
       ]
@@ -664,17 +1198,20 @@
       "question": "Will Zelenskyy and Putin speak? (Before Jan 1, 2027)",
       "url": "https://kalshi.com/markets/kxzelenskyputin",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.86,
+      "payout_multiplier": 1.16,
       "llm_true_probability": 0.935,
       "likelihood_to_convert_pct": 93.5,
       "net_edge_cents": 7.5,
       "expected_roi_pct": 8.7,
       "quarter_kelly_bankroll_pct": 13.4,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.89,
       "volume_usd": 142390,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
-      "plain_english_summary": "Near-miss (+7.5c edge): Requires a direct, real-time phone call, video call, or in-person conversation between Zelenskyy and Putin in the next 65 days. Intermediary talks, envoy shuttles, or attending the same summit without speaking directly resolve to NO.",
+      "plain_english_summary": "Near-miss (+7.5c edge): Requires a direct, real-time phone call, video call, or in-person conversation between Zelenskyy and Putin in the next 65 days. Intermediary talks or envoy shuttles resolve to NO.",
       "resolution_rule_traps": "CFTC contract KXZELENSKYPUTIN-29-27 excludes written messages, intermediaries, and being in the same room without direct conversation.",
       "historical_precedents": [
         "Zelenskyy and Putin have not spoken directly since December 2019 (nearly 7 years)."
@@ -697,18 +1234,21 @@
       "question": "When will any company achieve AGI? (Before Apr 1, 2027)",
       "url": "https://kalshi.com/markets/kxagico",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.86,
+      "payout_multiplier": 1.16,
       "llm_true_probability": 0.935,
       "likelihood_to_convert_pct": 93.5,
       "net_edge_cents": 7.5,
       "expected_roi_pct": 8.7,
       "quarter_kelly_bankroll_pct": 13.4,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.88,
       "volume_usd": 25318,
       "end_date": "2027-04-01T03:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
       "plain_english_summary": "Near-miss (+7.5c edge): Kalshi's strict wording requires a verifiable company to officially declare it has 'achieved/attained/reached/developed AGI' before April 1, 2027, explicitly disqualifying 'AGI-level' or 'near-AGI' marketing language.",
-      "resolution_rule_traps": "Statements describing 'AGI-like', 'AGI-level', 'near-AGI', or 'toward AGI' systems do not qualify. Microsoft-OpenAI contractual clauses also create strong legal disincentives against premature formal AGI declarations.",
+      "resolution_rule_traps": "Statements describing 'AGI-like', 'AGI-level', 'near-AGI', or 'toward AGI' systems do not qualify.",
       "historical_precedents": [
         "All frontier model launches through October 2026 (including GPT-6 Astra/Terra and Claude 4/5) have avoided formal corporate declarations of 'achieved AGI'."
       ],
@@ -726,34 +1266,37 @@
       ]
     },
     {
-      "platform": "Kalshi",
-      "question": "When will Bill Belichick leave North Carolina? (Before Dec 1, 2026)",
-      "url": "https://kalshi.com/markets/kxncaafcoachleave",
+      "platform": "Polymarket",
+      "question": "US-Iran Final Nuclear Deal by December 31, 2026?",
+      "url": "https://polymarket.com/event/us-iran-final-nuclear-deal-by-20260621201254412",
       "recommended_side": "NO",
-      "executable_ask_price": 0.77,
-      "llm_true_probability": 0.84,
-      "likelihood_to_convert_pct": 84.0,
-      "net_edge_cents": 7.0,
-      "expected_roi_pct": 9.1,
-      "quarter_kelly_bankroll_pct": 7.6,
-      "confidence_score": 0.82,
-      "volume_usd": 15718,
-      "end_date": "2026-12-01T04:59:00Z",
+      "strategy_tier": "WATCHLIST",
       "status": "WATCHLIST_NEAR_MISS",
-      "plain_english_summary": "Near-miss (+7.0c edge): After a rocky 4-8 debut in 2025, UNC has rebounded in fall 2026 with wins over ranked Pitt and rival Duke, and firing Belichick before Dec 1, 2026 would trigger a >$20M guaranteed buyout across his first three contract years.",
-      "resolution_rule_traps": "Requires Belichick to officially cease being head coach at UNC before December 1, 2026 (the final week of the regular season, prior to NFL Black Monday).",
+      "executable_ask_price": 0.88,
+      "payout_multiplier": 1.14,
+      "llm_true_probability": 0.955,
+      "likelihood_to_convert_pct": 95.5,
+      "net_edge_cents": 7.5,
+      "expected_roi_pct": 8.5,
+      "quarter_kelly_bankroll_pct": 15.6,
+      "recommended_bankroll_stake_pct": 0.0,
+      "confidence_score": 0.91,
+      "volume_usd": 3624360,
+      "end_date": "2027-01-01T04:59:00Z",
+      "plain_english_summary": "Near-miss (+7.5c edge vs +8.0c cutoff): Although the U.S. and Iran signed a 60-day framework in June 2026, talks fractured by July when the U.S. reinstated its naval blockade of Iranian vessels.",
+      "resolution_rule_traps": "Requires a formal written final diplomatic instrument signed or officially adopted by both the U.S. and Iran by Dec 31, 2026, 11:59 PM ET.",
       "historical_precedents": [
-        "Guaranteed $10M/yr college coaching contracts with >$20M buyouts are rarely terminated mid-season when the team is in bowl contention."
+        "The 2013-2015 JCPOA required 20 months of negotiations after the November 2013 JPOA interim framework."
       ],
       "scenario_tree": [
         {
-          "scenario_name": "Belichick coaches through the end of the November 2026 regular season past Dec 1",
-          "probability": 0.84,
+          "scenario_name": "No final mutually signed nuclear treaty is completed by Dec 31, 2026",
+          "probability": 0.955,
           "impact_on_resolution": "Resolves NO"
         },
         {
-          "scenario_name": "Belichick resigns or is fired before Dec 1, 2026",
-          "probability": 0.16,
+          "scenario_name": "Surprise year-end diplomatic breakthrough produces a signed final nuclear accord",
+          "probability": 0.045,
           "impact_on_resolution": "Resolves YES"
         }
       ]
@@ -763,18 +1306,21 @@
       "question": "Will Indiana enact a data center moratorium by December 31, 2027?",
       "url": "https://polymarket.com/event/indiana-enacts-data-center-moratorium-by-20260929",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.84,
+      "payout_multiplier": 1.19,
       "llm_true_probability": 0.91,
       "likelihood_to_convert_pct": 91.0,
       "net_edge_cents": 7.0,
       "expected_roi_pct": 8.3,
       "quarter_kelly_bankroll_pct": 10.9,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.86,
       "volume_usd": 5054739,
       "end_date": "2028-01-01T04:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
-      "plain_english_summary": "Near-miss (+7.0c edge): Local county pushback against hyperscale data centers in Indiana has led retail traders to bid YES to 17c (NO Ask 84c), but the contract requires a binding STATEWIDE law prohibiting all new >100MW data centers across Indiana, which strongly conflicts with the Republican supermajority legislature's pro-investment policy.",
-      "resolution_rule_traps": "County/municipal moratoria or pausing state tax incentives/exemptions do NOT count\u2014must be a binding statewide statutory or constitutional prohibition on construction/interconnection.",
+      "plain_english_summary": "Near-miss (+7.0c edge): Local county pushback against hyperscale data centers in Indiana has led retail traders to bid YES to 17c (NO Ask 84c), but the contract requires a binding STATEWIDE law prohibiting all new >100MW data centers across Indiana.",
+      "resolution_rule_traps": "County/municipal moratoria or pausing state tax incentives/exemptions do NOT count\u2014must be a binding statewide statutory or constitutional prohibition.",
       "historical_precedents": [
         "Zero U.S. states have enacted a binding statewide statutory ban on hyperscale data center construction."
       ],
@@ -796,16 +1342,19 @@
       "question": "Strait of Hormuz traffic returns to normal by December 31?",
       "url": "https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.89,
+      "payout_multiplier": 1.12,
       "llm_true_probability": 0.95,
       "likelihood_to_convert_pct": 95.0,
       "net_edge_cents": 6.0,
       "expected_roi_pct": 6.7,
       "quarter_kelly_bankroll_pct": 13.6,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.9,
       "volume_usd": 15657787,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
       "plain_english_summary": "High conversion likelihood (95.0% NO), moderate edge (+6.0c): Requires IMF PortWatch's 7-day moving average of Strait of Hormuz ship transits to hit >= 60 before Dec 31, 2026 while the U.S. naval blockade reinstated on July 13, 2026 remains in force.",
       "resolution_rule_traps": "Resolves strictly on IMF PortWatch 7-day moving average ('Arrivals of Ships') reaching >= 60.0 on any day through Dec 31, 2026.",
       "historical_precedents": [
@@ -829,16 +1378,19 @@
       "question": "Will there be at least 10000 measles cases in the U.S. in 2026?",
       "url": "https://polymarket.com/event/measles-cases-in-us-in-2026",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.935,
+      "payout_multiplier": 1.07,
       "llm_true_probability": 0.99,
       "likelihood_to_convert_pct": 99.0,
       "net_edge_cents": 5.5,
       "expected_roi_pct": 5.9,
       "quarter_kelly_bankroll_pct": 21.2,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.98,
       "volume_usd": 6531935,
       "end_date": "2027-01-01T04:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
       "plain_english_summary": "Highest conversion certainty in our scan (99.0% NO), +5.5c bond-like yield: According to the official CDC Measles counter on October 22, 2026, total U.S. cases in 2026 stand at 4,588 after nearly 10 months. Reaching 10,000 in the remaining 9.5 weeks would require 570 cases/week (5.2x the 2026 average).",
       "resolution_rule_traps": "Resolves strictly on the official CDC Measles (Rubeola) case counter as of Dec 31, 2026, 11:59 PM ET; state-level unconfirmed counts do not qualify.",
       "historical_precedents": [
@@ -862,16 +1414,19 @@
       "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
       "url": "https://polymarket.com/event/what-price-will-bitcoin-hit-before-2027",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.89,
+      "payout_multiplier": 1.12,
       "llm_true_probability": 0.94,
       "likelihood_to_convert_pct": 94.0,
       "net_edge_cents": 5.0,
       "expected_roi_pct": 5.6,
       "quarter_kelly_bankroll_pct": 11.4,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.84,
       "volume_usd": 6949807,
       "end_date": "2027-01-01T05:00:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
       "plain_english_summary": "High conversion likelihood (94.0% NO), +5.0c edge: Institutional ETF support keeps downside tail risk muted over the remaining 65 days of 2026, though the 89c executable ask leaves +5.0c edge (below our +8.0c high-conviction filter).",
       "resolution_rule_traps": "Resolves YES if any 1-minute Binance BTC/USDT candle 'Low' hits <= $55,000.00 before Dec 31, 2026, 23:59 ET.",
       "historical_precedents": [
@@ -895,24 +1450,27 @@
       "question": "Will there be no change in Fed interest rates after the October 2026 meeting?",
       "url": "https://polymarket.com/event/fed-decision-in-october-20260617190323537",
       "recommended_side": "YES",
+      "strategy_tier": "WATCHLIST",
+      "status": "WATCHLIST_NEAR_MISS",
       "executable_ask_price": 0.937,
+      "payout_multiplier": 1.07,
       "llm_true_probability": 0.975,
       "likelihood_to_convert_pct": 97.5,
       "net_edge_cents": 3.8,
       "expected_roi_pct": 4.1,
       "quarter_kelly_bankroll_pct": 15.1,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.96,
       "volume_usd": 23970339,
       "end_date": "2026-10-29T03:59:00Z",
-      "status": "WATCHLIST_NEAR_MISS",
-      "plain_english_summary": "48-hour bond-like lock (97.5% YES), +3.8c edge: The FOMC meets Oct 27-28, 2026 inside the Fed blackout period with zero telegraphing of a rate change. Because the executable ask is already 93.7c, net edge is +3.8c.",
+      "plain_english_summary": "24-hour bond-like lock (97.5% YES), +3.8c edge: The FOMC concludes its Oct 27-28, 2026 meeting tomorrow with zero telegraphing of an October rate change. Because the executable ask is already 93.7c, net edge is +3.8c.",
       "resolution_rule_traps": "Resolves on the official FOMC statement issued on October 28, 2026 for the upper bound of the target federal funds range.",
       "historical_precedents": [
         "Since 2009, the Federal Reserve has never surprised markets during a scheduled FOMC meeting when CME FedWatch probabilities exceeded 93% entering the blackout window."
       ],
       "scenario_tree": [
         {
-          "scenario_name": "FOMC holds the target federal funds rate unchanged on Oct 28, 2026",
+          "scenario_name": "FOMC holds the target federal funds rate unchanged at 3.75%-4.00% on Oct 28, 2026",
           "probability": 0.975,
           "impact_on_resolution": "Resolves YES"
         },
@@ -924,53 +1482,23 @@
       ]
     },
     {
-      "platform": "Polymarket",
-      "question": "Billionaire one-time wealth tax passes in California election 2026?",
-      "url": "https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
-      "recommended_side": "NO",
-      "executable_ask_price": 0.76,
-      "llm_true_probability": 0.62,
-      "likelihood_to_convert_pct": 62.0,
-      "net_edge_cents": -14.0,
-      "expected_roi_pct": -18.4,
-      "quarter_kelly_bankroll_pct": 0.0,
-      "confidence_score": 0.85,
-      "volume_usd": 4234997,
-      "end_date": "2026-11-04T04:59:00Z",
-      "status": "REJECTED_TRAP_ALERT",
-      "plain_english_summary": "TRAP ALERT ON 'NO' AT 76c: Many Polymarket traders priced NO at 76c assuming the billionaire wealth tax wouldn't qualify or would lose easily, but California Proposition 40 (5% one-time tax on >$1B wealth) IS on the Nov 3, 2026 ballot and led 45%-42% in late-September UC Berkeley IGS polling! NO has only a ~62% true chance (due to competing Prop 42 and late opposition ad blitz), making NO at 76c negative EV (-14c).",
-      "resolution_rule_traps": "Proposition 40 officially qualified before the June 25, 2026 cutoff. Note also that competing Proposition 42 on the same ballot seeks to block retroactive personal property/wealth taxes.",
-      "historical_precedents": [
-        "UC Berkeley IGS polls in Aug 2026 (48% Yes - 41% No) and late Sept 2026 (45% Yes - 42% No) show Proposition 40 in a competitive toss-up, far higher than the 25c YES market price."
-      ],
-      "scenario_tree": [
-        {
-          "scenario_name": "Heavy late opposition ad spending and Gov. Newsom's opposition push Prop 40 below 50% on Nov 3",
-          "probability": 0.62,
-          "impact_on_resolution": "Resolves NO"
-        },
-        {
-          "scenario_name": "California voters pass Proposition 40 (>50% Yes) on Nov 3, 2026",
-          "probability": 0.38,
-          "impact_on_resolution": "Resolves YES"
-        }
-      ]
-    },
-    {
       "platform": "Manifold",
       "question": "Donut Battery is essentially Lithium free?",
       "url": "https://manifold.markets/MikhailTal/donut-battery-is-essentially-lithiu",
       "recommended_side": "NO",
+      "strategy_tier": "WATCHLIST",
+      "status": "REJECTED_TRAP_ALERT",
       "executable_ask_price": 0.816,
+      "payout_multiplier": 1.23,
       "llm_true_probability": 0.68,
       "likelihood_to_convert_pct": 68.0,
       "net_edge_cents": -13.6,
       "expected_roi_pct": -16.7,
       "quarter_kelly_bankroll_pct": 0.0,
+      "recommended_bankroll_stake_pct": 0.0,
       "confidence_score": 0.65,
       "volume_usd": 774332,
       "end_date": "2027-01-01T03:50:00Z",
-      "status": "REJECTED_TRAP_ALERT",
       "plain_english_summary": "TRAP ALERT ON 'NO' AT 81.6c: While battery skeptics (e.g., Ziroth) argue Donut Lab's voltage curves resemble conventional Li-ion, Donut Lab published an independent UK Intertek lab assay in late 2026 showing only 3.4 ppm lithium (<0.1% wt threshold). Because the resolution rule accepts certified independent lab testing (<0.1% Li by weight), buying NO at 81.6c carries severe resolution-rule risk.",
       "resolution_rule_traps": "Resolves YES if independent testing from a certified lab confirms <0.1% lithium by weight. Donut Lab's UK Intertek report (3.4 ppm Li) creates high ambiguity over whether a second academic teardown will happen before EOY 2026.",
       "historical_precedents": [
